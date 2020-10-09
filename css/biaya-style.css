@@ -24,11 +24,11 @@ strong {
 .header {
   background: url(../images/qrpay.jpeg) no-repeat center;
   background-size: cover;
-  min-height: 100vh;
+  min-height: calc(100% - 60px);
 }
 
 .header .navbar {
-  background-color: rgba(0, 0, 0, 0.2) !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
   /* background-color: transparent !important; */
 }
 
