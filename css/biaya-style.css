@@ -1,6 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  font-size: 13px;
 }
 
 strong {
@@ -24,7 +25,6 @@ strong {
 .header {
   background: url(../images/qrpay.jpeg) no-repeat center;
   background-size: cover;
-  min-height: calc(100% - 60px);
 }
 
 .header .navbar {
@@ -283,8 +283,6 @@ strong {
   color: #005079;
 }
 
-
-  
 .nav-pills .nav-link.nav-route {
   display: block;
   font-size: 14px;
@@ -314,7 +312,8 @@ strong {
   text-align: center;
 }
 
-.biaya-core-info h3, .biaya-pay-info h3 {
+.biaya-core-info h3,
+.biaya-pay-info h3 {
   font-size: 40px;
   font-weight: 700;
   padding: 30px;
@@ -342,20 +341,18 @@ div.tab-content#v-pills-tabContent {
   margin-top: 100px;
 }
 
-
 .bp-one {
   text-align: center;
 }
 
 .bp-plus {
   text-align: center;
-}  
+}
 
 .col-md-6 img.img-fluid {
   position: relative;
   margin-top: 0;
 }
-
 
 .bp-plus h5,
 .bp-one h5 {
@@ -449,7 +446,6 @@ span.divider {
   border-color: transparent;
 }
 
-
 .nav-justified a {
   border: none;
   -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 203, 174, 0.1);
@@ -534,15 +530,19 @@ label {
   margin-bottom: 30px;
 }
 
-
-
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 576px) {
+  body {
+    font-size: 14px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
   .tagline {
     text-align: left;
   }
@@ -569,6 +569,10 @@ label {
   .container.presentation > nav > .nav-tabs .nav-link {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin: 0;
+    box-shadow: none;
   }
 
   .tab-inner {
@@ -621,31 +625,30 @@ label {
     font-size: 30px;
   }
 
-
   .biaya-core-info p,
   .biaya-pay-info p {
     font-size: 24px;
-  }  
+  }
 
   .nav-pills .nav-link.nav-route {
     font-size: 18px;
     padding: 1em 1.5em;
-  }  
+  }
 
   div.tab-content#v-pills-tabContent {
     margin-left: 50px;
     font-size: 16px;
-  }  
+  }
 
   #v-pills-tabContent h6 {
     font-size: 24px;
-  }  
+  }
 
   .biaya-core-info h3,
   .biaya-pay-info h3 {
     font-size: 50px;
     padding: 50px;
-  }  
+  }
 
   .col-md-6 img.img-fluid {
     position: absolute;
@@ -655,11 +658,11 @@ label {
   .bp-one {
     text-align: right;
   }
-  
+
   .bp-plus {
     text-align: left;
-  }  
-  
+  }
+
   .tagline-pay h3 {
     padding: 150px 0;
     font-size: 40px;
@@ -667,11 +670,11 @@ label {
   .tagline-pay {
     margin-top: 150px;
     margin-bottom: 150px;
-  }  
+  }
 
   .pros h5 {
     font-size: 52px;
-  }  
+  }
   .pros p {
     font-size: 28px;
   }
@@ -680,11 +683,11 @@ label {
     margin: 10px;
     padding: 20px 0;
     font-size: 16px;
-  }  
-  
+  }
+
   .cons h5 {
     font-size: 36px;
-  } 
+  }
   .cons p {
     font-size: 20px;
     color: #064f76;
@@ -701,22 +704,30 @@ label {
   footer .container {
     padding-top: 200px;
     padding-bottom: 200px;
-  }  
+  }
 
   .text-contact {
     margin: 0px;
     border-radius: 20px 0px 0px 20px;
     font-size: 18px;
     padding: 4em 3em;
-    
-  }  
-  
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-height: 800px) {
+  .container.presentation {
+    margin-top: 0px;
+}  
 }
