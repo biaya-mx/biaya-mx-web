@@ -728,6 +728,6 @@ label {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (max-height: 800px) {
   .container.presentation {
-    margin-top: 0px;
-}  
+      margin-top: 0px;
+  }  
 }
