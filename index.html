@@ -42,6 +42,7 @@
 </head>
 
 <body>
+    
     <header class="header">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container">
@@ -59,23 +60,14 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="#nosotros">Nosotros</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Productos</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#biaya-core">Biaya Core</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#biaya-pay">Biaya Pay</a>
-                            </div>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#codi">CoDi</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">CoDi</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#codi-rutas">Rutas</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#codi-ventajas">Ventajas</a>
-                            </div>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#productos">Productos</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#ventajas">Ventajas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contacto">Contacto</a>
@@ -142,6 +134,7 @@
             </div>
         </div>
     </div>
+    
     <div class="for-who" id="ventajas">
         <div class="container">
             <div class="row">
@@ -263,8 +256,61 @@
             </div>
         </div>
     </div>
+
+    <div class="codi-info container" id="codi">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>CoDi</h4>
+                <p class="text-justify">
+                    CoDi® es la nueva forma de realizar pagos digitales desarrollada por
+                    el Banco de México. Con CoDi® realiza cobros y pagos desde tu
+                    celular, utilizando una cuenta bancaria o de alguna institución
+                    financiera, sin comisiones.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="nav flex-column nav-pills v-pills-codi" id="v-pills-tab" role="tablist"
+                            aria-orientation="vertical">
+                            <a class="nav-link active show" id="v-pills-codi-ft2-tab" data-toggle="pill"
+                                href="#v-pills-codi-ft1" role="tab" aria-controls="v-pills-codi-ft1"
+                                aria-selected="false">
+                                <i class="fas fa-users"></i>
+                            </a>
+                            <a class="nav-link" id="v-pills-codi-ft2-tab" data-toggle="pill" href="#v-pills-codi-ft2"
+                                role="tab" aria-controls="v-pills-codi-ft2" aria-selected="false">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="tab-content tab-codi" id="v-pills-tabContent">
+                            <div class="tab-pane fade active show" id="v-pills-codi-ft1" role="tabpanel"
+                                aria-labelledby="v-pills-codi-ft1-tab">
+                                <h6>Paga con CoDi</h6>
+                                <p class="codi-info-tabtext">
+                                    Diseñada para personas o negocios que deseen pagar por
+                                    cualquier tipo de bien o servicio
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-codi-ft2" role="tabpanel"
+                                aria-labelledby="v-pills-codi-ft2-tab">
+                                <h6>Paga con CoDiS</h6>
+                                <p class="codi-info-tabtext">
+                                    Diseñada para personas o negocios que deseen pagar por
+                                    cualquier tipo de bien o servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="our-products">
-        <div class="container" id="biaya-core">
+        <div class="container" id="productos">
             <h6>Plataforma tecnológica</h6>
             <h2>Nuestros <strong>productos</strong></h2>
             <div class="biaya-core-info">
@@ -388,6 +434,7 @@
             </div>
         </div>
     </div>
+
     <div class="tagline-pay">
         <div class="container">
             <h3>
@@ -398,59 +445,7 @@
         </div>
     </div>
 
-    <div class="codi-info container" id="codi-rutas">
-        <div class="row">
-            <div class="col-md-6">
-                <h4>CoDi</h4>
-                <p class="text-justify">
-                    CoDi® es la nueva forma de realizar pagos digitales desarrollada por
-                    el Banco de México. Con CoDi® realiza cobros y pagos desde tu
-                    celular, utilizando una cuenta bancaria o de alguna institución
-                    financiera, sin comisiones.
-                </p>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="nav flex-column nav-pills v-pills-codi" id="v-pills-tab" role="tablist"
-                            aria-orientation="vertical">
-                            <a class="nav-link active show" id="v-pills-codi-ft2-tab" data-toggle="pill"
-                                href="#v-pills-codi-ft1" role="tab" aria-controls="v-pills-codi-ft1"
-                                aria-selected="false">
-                                <i class="fas fa-users"></i>
-                            </a>
-                            <a class="nav-link" id="v-pills-codi-ft2-tab" data-toggle="pill" href="#v-pills-codi-ft2"
-                                role="tab" aria-controls="v-pills-codi-ft2" aria-selected="false">
-                                <i class="fas fa-hand-holding-usd"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-9">
-                        <div class="tab-content tab-codi" id="v-pills-tabContent">
-                            <div class="tab-pane fade active show" id="v-pills-codi-ft1" role="tabpanel"
-                                aria-labelledby="v-pills-codi-ft1-tab">
-                                <h6>Paga con CoDi</h6>
-                                <p class="codi-info-tabtext">
-                                    Diseñada para personas o negocios que deseen pagar por
-                                    cualquier tipo de bien o servicio
-                                </p>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-codi-ft2" role="tabpanel"
-                                aria-labelledby="v-pills-codi-ft2-tab">
-                                <h6>Paga con CoDiS</h6>
-                                <p class="codi-info-tabtext">
-                                    Diseñada para personas o negocios que deseen pagar por
-                                    cualquier tipo de bien o servicio
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="difference" id="codi-ventajas">
+    <div class="difference" id="ventajas">
         <div class="container">
             <h6>Buscamos democratizar el uso CoDi</h6>
             <h2>¿Nuestras <strong>ventajas</strong>?</h2>
@@ -723,6 +718,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
