@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="css/biaya-style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link href="css/fontawesome.css" type="text/css" rel="stylesheet" />
-    <title>Biaya MX</title>
+    <title>Biaya Pay</title>
 </head>
 
 <body>
@@ -93,20 +93,11 @@
                     <h6>Próximamente en:</h6>
                     <div class="row justify-content-center">
                         <div class="col-5">
-                            <img src="images/app-store-badge.png" alt="" class="img-badge" />
+                            <img src="images/app-store-badge.png" alt="" class="img-badge" data-toggle="modal" data-target="#myModal"/>
                         </div>
                         <div class="col-5">
-                            <img src="images/google-play-badge.png" alt="" class="img-badge" />
+                            <img src="images/google-play-badge.png" alt="" class="img-badge" data-toggle="modal" data-target="#myModal"/>
                         </div>
-                    </div>
-                    <div class="row">
-                        <form class="form-inline m-auto">
-                            <div class="form-group mx-sm-3 mb-2">
-                              <label for="inputMail" class="sr-only">Correo</label>
-                              <input type="email" class="form-control" id="inputMail" placeholder="Correo">
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-2 btn-biaya">Notificarme</button>
-                          </form>                       
                     </div>
                 </div>
             </div>
@@ -160,7 +151,7 @@
         </div>
     </div>
 
-    <div class="for-who" id="ventajas">
+    <div class="for-who">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 for-who-info">
@@ -766,6 +757,30 @@
         </div>
     </footer>
 
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrate para formar parte de nuestro piloto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-susbribe" class="form-inline m-auto">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="inputMail" class="sr-only">Correo electrónico</label>
+                            <input type="email" class="form-control" id="inputMail" placeholder="Correo electrónico"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"> 
+                    <button type="submit" class="btn btn-primary mb-2 btn-biaya" data-toggle="modal" data-target="#myModal">Notificarme</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -777,6 +792,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script>
+        $('#myModal')
+            .on('shown.bs.modal', function () {
+                $('#myInput').trigger('focus')
+            }
+        );
+    </script>
 </body>
 
 </html>
