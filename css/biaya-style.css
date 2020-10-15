@@ -42,6 +42,23 @@ strong {
   margin-right: auto;
 }
 
+.img-badge {
+  height: 60px;
+  width: auto;
+}
+
+input#inputMail {
+  background: transparent;
+}
+
+
+.form-control:focus {
+  border-color: #923990;
+  box-shadow: none;
+  border-width: 2px;
+}
+
+
 .tagline > h1,
 .tagline > h2 {
   color: #fff;

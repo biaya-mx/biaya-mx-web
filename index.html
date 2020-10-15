@@ -10,23 +10,26 @@
     <meta name="AUTHOR" content="Cristian Jaramillo">
     <meta name="REPLY-TO" content="contacto@biaya.mx">
     <link REV="made" href="mailto:contacto@biaya.mx">
-    <meta name="DESCRIPTION" content="Biaya Pay es la única solución en el mercado que hace posible la incorporación de CoDi a todas las instituciones Financieras de México. Permitiendo así la sana competencia en el mercado y fomentando">
-    <meta name="KEYWORDS" content="biaya,codi,spei,banxico,cnbv,wallet,qr,nfc,push notification,android,ios,sdk,ruta 1,ruta 2,ruta 3,ruta 4,api,microservice">
+    <meta name="DESCRIPTION"
+        content="Biaya Pay es la única solución en el mercado que hace posible la incorporación de CoDi a todas las instituciones Financieras de México. Permitiendo así la sana competencia en el mercado y fomentando">
+    <meta name="KEYWORDS"
+        content="biaya,codi,spei,banxico,cnbv,wallet,qr,nfc,push notification,android,ios,sdk,ruta 1,ruta 2,ruta 3,ruta 4,api,microservice">
     <meta name="Resource-type" content="Homepage">
     <meta name="DateCreated" content="Thu, 1 October 2020 14:00:00 GMT-5">
     <meta name="Revisit-after" content="7 days">
     <meta name="robots" content="index, follow" />
-	<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
     <meta property="og:title" content="Biaya MX | Biaya Pay">
     <meta property="og:site_name" content="Biaya">
     <meta property="og:url" content="https://biaya.mx/">
-    <meta property="og:description" content="Biaya Pay es la única solución en el mercado que hace posible la incorporación de CoDi a todas las instituciones Financieras de México. Permitiendo así la sana competencia en el mercado y fomentando">
+    <meta property="og:description"
+        content="Biaya Pay es la única solución en el mercado que hace posible la incorporación de CoDi a todas las instituciones Financieras de México. Permitiendo así la sana competencia en el mercado y fomentando">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://biaya.mx/images/qrpay.jpeg">
     <meta property="og:image:width" content="4540" />
-	<meta property="og:image:height" content="3027" />
+    <meta property="og:image:height" content="3027" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -77,14 +80,35 @@
                 </div>
             </div>
         </nav>
-
-        <div class="container d-flex align-items-center" style="height: 100vh">
-            <div class="tagline acrylic shadow">
-                <h1>Biaya Pay</h1>
-                <h2>
-                    La forma más simple <br />
-                    de sumarse a CoDi<br />
-                </h2>
+        <div class="container">
+            <div class="row d-flex align-items-center" style="height: 100vh">
+                <div class="tagline acrylic shadow col-md-6">
+                    <h1>Biaya Pay</h1>
+                    <h2>
+                        La forma más simple <br />
+                        de sumarse a CoDi
+                    </h2>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h6>Próximamente en:</h6>
+                    <div class="row justify-content-center">
+                        <div class="col-5">
+                            <img src="images/app-store-badge.png" alt="" class="img-badge" />
+                        </div>
+                        <div class="col-5">
+                            <img src="images/google-play-badge.png" alt="" class="img-badge" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form class="form-inline m-auto">
+                            <div class="form-group mx-sm-3 mb-2">
+                              <label for="inputMail" class="sr-only">Correo</label>
+                              <input type="email" class="form-control" id="inputMail" placeholder="Correo">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2 btn-biaya">Notificarme</button>
+                          </form>                       
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -93,7 +117,7 @@
     <div class="container" id="nosotros">
         <div class="row justify-content-center biaya-intro">
             <div class="col-6 col-md-3">
-                <img src="images/biaya-color.svg" class="img-fluid" alt=""/>
+                <img src="images/biaya-color.svg" class="img-fluid" alt="" />
             </div>
             <div class="col-md-6 promotion-line">
                 <h3>Biaya Pay es la única solución en el mercado que hace posible
@@ -135,7 +159,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="for-who" id="ventajas">
         <div class="container">
             <div class="row">
@@ -648,6 +672,7 @@
             <h3>¿Ya te decidiste?, ¿aún tienes dudas?</h3>
             <h2>Contáctanos</h2>
             <div class="row form-container">
+                
                 <div class="col-md-4 text-contact">
                     <p>
                         Llena el formulario y nuestro equipo te contactará a la brevedad.
@@ -684,7 +709,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label class="input-text-label" for="inputEmail4">Compañía</label>
-                                <input type="email" class="form-control" id="inputEmail4" />
+                                <input type="email" class="form-control is-invalid" id="inputEmail4" />
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="input-text-label" for="inputPassword4">Teléfono</label>
@@ -716,6 +741,27 @@
                         </button>
                     </form>
                 </div>
+            </div>
+            <div class="row text-center">
+                
+                <div class="col-12">
+                <nav class="navbar navbar-expand navbar-light bg-transparent">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                      <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Aviso de privacidad</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Términos y condiciones</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>   
+                </div>         
+                <div class="col-12">
+                    <img src="images/biaya-footer.svg" alt="" class="m-auto">
+                    <h6><i class="fas fa-copyright"></i> Biaya 2020</h6>
+                </div>    
             </div>
         </div>
     </footer>
