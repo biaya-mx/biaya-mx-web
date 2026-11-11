@@ -942,6 +942,55 @@ a:hover > .more .ms, a:hover .more .ms { transform: translateX(4px); }
   .owns { grid-template-columns: 1fr; }
   .pill { font-size: 12px; text-align: left; }
 }
+/* ---------- Teléfonos: menos aire vertical, tarjetas compactas y filas que se deslizan ---------- */
+@media (max-width: 639px) {
+  :root { --section: 56px; }
+  .logos { padding: 24px 0 8px; }
+  .section-head { margin-bottom: 32px; }
+  .section-head h2 { font-size: 30px; margin-top: 14px; }
+  .section-head p { margin-top: 14px; }
+  .final h2 { font-size: 36px; }
+  .hero { padding: 100px 0 48px; }
+  .hero h1 { font-size: 36px; margin-top: 16px; }
+  .page-hero { padding: 100px 0 32px; }
+  .page-hero h1 { font-size: 34px; margin-top: 16px; }
+  .lead { font-size: 16px; }
+
+  /* Caja de prompt: pestañas con borde desvanecido para indicar que se deslizan */
+  .prompt-tabs, .fx-phases { -webkit-mask: linear-gradient(90deg, #000 85%, transparent); mask: linear-gradient(90deg, #000 85%, transparent); }
+  .prompt-input { padding: 10px 16px 4px; }
+  .prompt-input textarea { min-height: 56px; font-size: 16px; }
+  .prompt-ghost { left: 16px; right: 16px; top: 10px; font-size: 16px; }
+  .prompt-send { width: 100%; justify-content: center; }
+  .prompt-meta { display: none; }
+
+  /* Ejemplos en una sola fila deslizable en lugar de una columna larga */
+  .chips { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; margin: 16px calc(var(--gutter) * -1) 0; padding: 2px var(--gutter); scroll-padding: 0 var(--gutter); }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { flex: none; }
+
+  /* Demo de la AI Factory: sin huecos dentro de las tarjetas de subagentes */
+  .factory-wrap { margin-top: 32px; }
+  .fx-stage { height: 440px; }
+  .fx-agents { align-content: start; }
+  .fx-agent { gap: 6px; padding: 10px; }
+
+  /* Tarjetas con menos relleno */
+  .offer, .ind-card, .ctrl, .step, .phase-card, .how-step, .layer, .tile, .list-card, .form { padding: 20px; }
+  .offer h3, .phase-card h3 { margin-top: 16px; }
+  .ctrl .ic { margin-bottom: 14px; }
+  .ind-list li { padding: 12px 14px; }
+  .need { padding: 16px; }
+  .faq summary { padding: 16px 18px; font-size: 16px; }
+  .faq details p { padding: 0 18px 16px; }
+
+  /* Footer en dos columnas */
+  .footer { padding-top: 48px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-word { margin-top: 40px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
