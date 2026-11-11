@@ -1,807 +1,441 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es" class="no-js">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biaya | Ingeniería enterprise con IA, dentro de tu organización</title>
+  <meta name="description" content="Consultoría de ingeniería enterprise con IA en México: integraciones, APIs y soluciones a la medida, supervisadas por ingenieros y en tu infraestructura.">
+  <meta name="author" content="Biaya">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://biaya.mx/">
+  <link rel="alternate" hreflang="es-MX" href="https://biaya.mx/">
+  <link rel="alternate" hreflang="x-default" href="https://biaya.mx/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-    <meta http-equiv="Content-Type" content="text/html; ISO-8859-1">
-    <meta name="DC.Language" SCHEME="RFC1766" CONTENT="Spanish">
-    <meta name="AUTHOR" content="Cristian Jaramillo">
-    <meta name="REPLY-TO" content="contacto@biaya.mx">
-    <link REV="made" href="mailto:contacto@biaya.mx">
-    <meta name="DESCRIPTION"
-        content="Biaya Pay es la única solución en el mercado que hace posible la incorporación de CoDi a todas las instituciones Financieras de México. Permitiendo así la sana competencia en el mercado y fomentando">
-    <meta name="KEYWORDS"
-        content="biaya,codi,spei,banxico,cnbv,wallet,qr,nfc,push notification,android,ios,sdk,ruta 1,ruta 2,ruta 3,ruta 4,api,microservice">
-    <meta name="Resource-type" content="Homepage">
-    <meta name="DateCreated" content="Thu, 1 October 2020 14:00:00 GMT-5">
-    <meta name="Revisit-after" content="7 days">
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <!-- Open Graph (LinkedIn, WhatsApp, Facebook, Slack) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Biaya">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://biaya.mx/">
+  <meta property="og:title" content="Biaya | Ingeniería enterprise. Velocidad de la IA. Control tuyo.">
+  <meta property="og:description" content="Llevamos el desarrollo con IA a tu organización: más velocidad, sin comprometer tu seguridad, arquitectura ni gobernanza.">
+  <meta property="og:image" content="https://biaya.mx/images/og-image.png">
+  <meta property="og:image:secure_url" content="https://biaya.mx/images/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Biaya: ingeniería enterprise, velocidad de la IA, control tuyo.">
 
-    <meta property="og:title" content="Biaya MX | Biaya Pay">
-    <meta property="og:site_name" content="Biaya">
-    <meta property="og:url" content="https://biaya.mx/">
-    <meta property="og:description"
-        content="Biaya Pay es la única solución en el mercado que hace posible la incorporación de CoDi a todas las instituciones Financieras de México. Permitiendo así la sana competencia en el mercado y fomentando">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://biaya.mx/images/qrpay.jpeg">
-    <meta property="og:image:width" content="4540" />
-    <meta property="og:image:height" content="3027" />
+  <!-- X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Biaya | Ingeniería enterprise. Velocidad de la IA. Control tuyo.">
+  <meta name="twitter:description" content="Llevamos el desarrollo con IA a tu organización: más velocidad, sin comprometer tu seguridad, arquitectura ni gobernanza.">
+  <meta name="twitter:image" content="https://biaya.mx/images/og-image.png">
+  <meta name="twitter:image:alt" content="Biaya: ingeniería enterprise, velocidad de la IA, control tuyo.">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00cbae">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/biaya-style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <link href="css/fontawesome.css" type="text/css" rel="stylesheet" />
-    <title>Biaya Pay</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00cbae">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#07090c">
+  <meta name="application-name" content="Biaya">
+  <meta name="apple-mobile-web-app-title" content="Biaya">
+  <meta name="theme-color" content="#07090c">
+
+  <!-- Datos estructurados (Schema.org). Solo hechos verificados: ver .claude/skills/biaya-seo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://biaya.mx/#organization",
+        "name": "Biaya",
+        "url": "https://biaya.mx/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://biaya.mx/#logo",
+          "url": "https://biaya.mx/android-chrome-512x512.png",
+          "width": 512,
+          "height": 512,
+          "caption": "Biaya"
+        },
+        "image": "https://biaya.mx/images/og-image.png",
+        "description": "Consultoría de ingeniería enterprise que lleva el desarrollo con inteligencia artificial a las organizaciones: AI Factory con subagentes especializados, supervisión de ingenieros (human in the loop) y transferencia de capacidades a los equipos del cliente.",
+        "slogan": "Ingeniería enterprise. Velocidad de la IA. Control tuyo.",
+        "foundingDate": "2020",
+        "email": "contacto@biaya.mx",
+        "areaServed": { "@type": "Country", "name": "México" },
+        "knowsLanguage": "es-MX",
+        "knowsAbout": [
+          "Desarrollo de software con inteligencia artificial",
+          "Integraciones enterprise",
+          "Modernización de APIs",
+          "SDKs y documentación técnica",
+          "Gobierno de IA",
+          "CoDi",
+          "SPEI",
+          "Servicios financieros",
+          "Telecomunicaciones",
+          "Retail",
+          "Sector público"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "contacto@biaya.mx",
+          "areaServed": "MX",
+          "availableLanguage": ["Spanish"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Biaya",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Factory: soluciones enterprise construidas con IA", "description": "Un orquestador y subagentes de IA especializados ejecutan cada fase (descubrimiento, arquitectura, construcción, calidad, seguridad y despliegue) con aprobación humana.", "url": "https://biaya.mx/ai-factory/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integraciones enterprise de punta a punta", "description": "Integraciones con core, ERP, CRM, colas de mensajes y nubes, con pruebas automatizadas, SDKs y documentación.", "url": "https://biaya.mx/servicios/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Modernización de APIs e integraciones", "description": "Contratos, pruebas y documentación para APIs REST, gRPC y SOAP.", "url": "https://biaya.mx/servicios/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adopción de IA en tu organización", "description": "Procesos de desarrollo con IA, gobierno y políticas de IA, plataforma en tu infraestructura, capacitación y medición de resultados.", "url": "https://biaya.mx/servicios/#adopcion" } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://biaya.mx/#website",
+        "url": "https://biaya.mx/",
+        "name": "Biaya",
+        "inLanguage": "es-MX",
+        "publisher": { "@id": "https://biaya.mx/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://biaya.mx/#webpage",
+        "url": "https://biaya.mx/",
+        "name": "Biaya | Ingeniería enterprise con IA, dentro de tu organización",
+        "description": "Consultoría de ingeniería enterprise con IA en México: integraciones, APIs y soluciones a la medida, supervisadas por ingenieros y en tu infraestructura.",
+        "inLanguage": "es-MX",
+        "isPartOf": { "@id": "https://biaya.mx/#website" },
+        "about": { "@id": "https://biaya.mx/#organization" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://biaya.mx/images/og-image.png", "width": 1200, "height": 630 }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&icon_names=account_balance,account_tree,add,alt_route,api,architecture,arrow_forward,arrow_upward,auto_awesome,bolt,bug_report,cell_tower,check,check_circle,close,cloud,cloud_done,cloud_upload,code,credit_card,dark_mode,data_object,database,deployed_code,description,dns,error,folder,groups,hub,insights,inventory_2,light_mode,lightbulb,lock,mail,menu,menu_book,monitor_heart,monitoring,pause,person_check,play_arrow,policy,precision_manufacturing,progress_activity,qr_code_2,radio_button_unchecked,rocket_launch,schedule,school,science,security,shield,shopping_bag,smart_toy,stream,supervised_user_circle,swap_horiz,sync_alt,task_alt,terminal,travel_explore,verified,verified_user&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="css/biaya.css">
+  <script>
+    document.documentElement.className = "js";
+    // Si js/biaya.js no carga, vuelve a mostrar el contenido animado (buscadores y redes lentas).
+    setTimeout(function () { if (!window.biayaReady) document.documentElement.classList.remove("js"); }, 4000);
+    try { var t = localStorage.getItem("biaya-theme"); if (t === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}
+  </script>
 </head>
 
 <body>
 
-    <header class="header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="images/biaya-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""
-                        loading="lazy" />
-                    Biaya Pay
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#nosotros">Nosotros</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#codi">CoDi</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#productos">Productos</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#ventajas">Ventajas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="row d-flex align-items-center" style="height: 100vh">
-                <div class="tagline acrylic shadow col-md-6">
-                    <h1>Biaya Pay</h1>
-                    <h2>
-                        La forma más simple <br />
-                        de sumarse a CoDi
-                    </h2>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h6>Próximamente en:</h6>
-                    <div class="row justify-content-center">
-                        <div class="col-5">
-                            <img src="images/app-store-badge.png" alt="" class="img-badge" data-toggle="modal" data-target="#myModal"/>
-                        </div>
-                        <div class="col-5">
-                            <img src="images/google-play-badge.png" alt="" class="img-badge" data-toggle="modal" data-target="#myModal"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- ===================== NAVEGACIÓN ===================== -->
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="./" aria-label="Biaya, ir al inicio">
+      <span class="brand-mark" aria-hidden="true"></span><span>Biaya</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+      <span class="ms" aria-hidden="true">menu</span>
+    </button>
+    <nav class="nav-links" id="nav-links" aria-label="Principal">
+      <a href="ai-factory/">AI Factory</a>
+      <a href="servicios/">Servicios</a>
+      <a href="industrias/">Industrias</a>
+      <a href="como-trabajamos/">Cómo trabajamos</a>
+      <a href="seguridad/">Seguridad</a>
+      <a href="nosotros/">Nosotros</a>
+      <a href="contacto/" class="btn btn-green btn-sm">Agenda una sesión</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar a tema claro">
+      <span class="ms" aria-hidden="true">light_mode</span><span>Claro</span>
+    </button>
+  </div>
+</header>
 
-    </header>
+<main>
 
-    <div class="container" id="nosotros">
-        <div class="row justify-content-center biaya-intro">
-            <div class="col-6 col-md-3">
-                <img src="images/biaya-color.svg" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-6 promotion-line">
-                <h3>Biaya Pay es la única solución en el mercado que hace posible
-                    la incorporación de CoDi a todas las instituciones Financieras de México. </h3>
-                <h3>Permitiendo así la sana competencia en el mercado y fomentando la inclusión a la era digital.</h3>
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="hero-grid" aria-hidden="true"></div>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card text-center card-selection">
-                    <i class="far fa-clock"></i>
-                    <h4>24/7</h4>
-                    <p style="text-align: center;">Envíar y recibir dinero cualquier día a cualquier hora</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center card-selection">
-                    <i class="fas fa-qrcode"></i>
-                    <h4>Código QR</h4>
-                    <p style="text-align: center;">
-                        Pagar en toda la red CoDi de establecimientos con sólo leer el código.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center card-selection">
-                    <i class="fas fa-credit-card"></i>
-                    <h4>Interbancario</h4>
-                    <p style="text-align: center;">Transferir dinero entre cuentas de diferentes bancos</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center card-selection">
-                    <i class="fas fa-university"></i>
-                    <h4>API</h4>
-                    <p style="text-align: center;">Solución flexible e integral para implementar CoDi</p>
-                </div>
-            </div>
-        </div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1 class="split">Agentic Software Factory <span class="grad-text">for enterprise industries</span></h1>
     </div>
 
-    <div class="for-who">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 for-who-info">
-                    <h6>Buscamos democratizar el uso <strong>CoDi</strong></h6>
-                    <h2>¿<strong>Para quién</strong> es BiayaPay?</h2>
-                    <p class="text-justify">
-                        Biaya Pay es para todos no importa si eres institución financiera, aseguradora, compañía
-                        telefónica, tienda departamental, barbería, restaurante, institución educativa… Las
-                        posibilidades son infinitas.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3 col-md-1">
-                    <div class="icon-container">
-                        <i class="fas fa-university"></i>
-                    </div>
-                </div>
-                <div class="col-9 col-md-5">
-                    <h4>Institucion Financiera</h4>
-                    <ul>
-                        <li>
-                            Permite a tus clientes envíar y recibir dinero entre los más de 31 Instituciones Financiera
-                            de la red CoDi
-                        </li>
-                        <li>
-                            Optimiza tu estrategia digital y potencializa tu presencia en el mercado
-                        </li>
-                        <li>
-                            En caso de tener una solución (Banca Móvil), Biaya Pay se integra gracias a sus innovadores
-                            SDK
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-3 col-md-1">
-                    <div class="icon-container">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                </div>
-                <div class="col-9 col-md-5">
-                    <h4>Comercio Mayorista</h4>
-                    <ul>
-                        <li>
-                            Acepta pagos sin la necesidad de terminales Financieras y olvidate de las comisiones.
-                        </li>
-                        <li>
-                            Recepción de fondos en segundos y sin intermediarios.
-                        </li>
-                        <li>
-                            Atrevés de:
-                        </li>
-                        <ul>
-                            <li>QR</li>
-                            <li>Push Notification</li>
-                            <li>NFC</li>
-                        </ul>
-                        <li>
-                            Administra la información de pagos y cobros de tu empresa a cualquier hora.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3 col-md-1">
-                    <div class="icon-container">
-                        <i class="fas fa-shopping-basket"></i>
-                    </div>
-                </div>
-                <div class="col-9 col-md-5">
-                    <h4>Comercios Minorista</h4>
-                    <ul>
-                        <li>
-                            Acepta pagos sin la necesidad de terminales Financieras y olvidate de las comisiones.
-                        </li>
-                        <li>
-                            Recepción de fondos en segundos y sin intermediarios.
-                        </li>
-                        <li>
-                            Atrevés de:
-                        </li>
-                        <ul>
-                            <li>QR</li>
-                            <li>Push Notification</li>
-                            <li>NFC</li>
-                        </ul>
-                        <li>
-                            Administra la información de pagos y cobros de tu empresa a cualquier hora.
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-3 col-md-1">
-                    <div class="icon-container">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                </div>
-                <div class="col-9 col-md-5">
-                    <h4>eCommerce</h4>
-                    <ul>
-                        <li>
-                            Acepta pagos de todos de las más de 31 Intitutciones Financieras de la red CoDi y olvidate
-                            de las comisiones.
-                        </li>
-                        <li>
-                            Recepción de fondos en segundos y sin intermediarios.
-                        </li>
-                        <li>
-                            Atrevés de una pasarela de pago integrable con presta-shop y woo-commerce:
-                        </li>
-                        <ul>
-                            <li>QR</li>
-                            <li>Push Notification</li>
-                        </ul>
-                        <li>
-                            Administra la información de pagos y cobros de tu empresa a cualquier hora.
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <form class="prompt-wrap reveal" style="--d:450ms" id="hero-prompt" autocomplete="off">
+      <div class="prompt">
+        <div class="prompt-tabs" role="tablist" aria-label="Tipo de necesidad">
+          <button class="prompt-tab" type="button" role="tab" aria-selected="true" data-kind="Nuevo producto"><span class="ms" aria-hidden="true">rocket_launch</span>Nuevo producto</button>
+          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-kind="Automatizar un proceso"><span class="ms" aria-hidden="true">account_tree</span>Automatizar</button>
+          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-kind="Conectar sistemas"><span class="ms" aria-hidden="true">hub</span>Conectar sistemas</button>
+          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-kind="Atención con IA"><span class="ms" aria-hidden="true">auto_awesome</span>Atención con IA</button>
+          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-kind="Modernizar"><span class="ms" aria-hidden="true">sync_alt</span>Modernizar</button>
         </div>
+        <div class="prompt-input" id="prompt-input">
+          <label for="prompt-text" class="sr-only">Describe la necesidad de tu negocio</label>
+          <textarea id="prompt-text" rows="2" maxlength="280"></textarea>
+          <span class="prompt-ghost" id="prompt-ghost" aria-hidden="true"></span>
+        </div>
+        <div class="prompt-bar">
+          <span class="prompt-meta"><span class="ms" aria-hidden="true">verified_user</span><span>Ingeniería enterprise · Human in the loop</span></span>
+          <button class="btn btn-green prompt-send" type="submit">Hablemos de esto <span class="ms" aria-hidden="true">arrow_forward</span></button>
+        </div>
+      </div>
+    </form>
+
+    <div class="chips reveal" style="--d:600ms" aria-label="Ejemplos de necesidades de negocio">
+      <button class="chip" type="button" data-prompt="Queremos lanzar una tarjeta de crédito garantizada para clientes que aún no tienen historial crediticio."><span class="ms" aria-hidden="true">credit_card</span>Tarjeta garantizada</button>
+      <button class="chip" type="button" data-prompt="Queremos que nuestros clientes hagan transferencias SPEI desde la app, con validación antifraude."><span class="ms" aria-hidden="true">account_balance</span>Transferencias desde la app</button>
+      <button class="chip" type="button" data-prompt="Nuestro inventario en línea no coincide con el de tienda y estamos perdiendo ventas."><span class="ms" aria-hidden="true">shopping_bag</span>Inventario que no cuadra</button>
+      <button class="chip" type="button" data-prompt="Nuestro call center no da abasto con preguntas repetidas sobre nuestras políticas."><span class="ms" aria-hidden="true">auto_awesome</span>Call center saturado</button>
+      <button class="chip" type="button" data-prompt="Nuestros sistemas legados frenan cada integración con nuevos socios."><span class="ms" aria-hidden="true">sync_alt</span>Sistemas legados que frenan</button>
     </div>
 
-    <div class="codi-info container" id="codi">
-        <div class="row">
-            <div class="col-md-6">
-                <h4>CoDi</h4>
-                <p class="text-justify">
-                    CoDi® es la nueva forma de realizar pagos digitales desarrollada por
-                    el Banco de México. Con CoDi® realiza cobros y pagos desde tu
-                    celular, utilizando una cuenta bancaria o de alguna institución
-                    financiera, sin comisiones.
-                </p>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="nav flex-column nav-pills v-pills-codi" id="v-pills-tab" role="tablist"
-                            aria-orientation="vertical">
-                            <a class="nav-link active show" id="v-pills-codi-ft2-tab" data-toggle="pill"
-                                href="#v-pills-codi-ft1" role="tab" aria-controls="v-pills-codi-ft1"
-                                aria-selected="false">
-                                <i class="fas fa-users"></i>
-                            </a>
-                            <a class="nav-link" id="v-pills-codi-ft2-tab" data-toggle="pill" href="#v-pills-codi-ft2"
-                                role="tab" aria-controls="v-pills-codi-ft2" aria-selected="false">
-                                <i class="fas fa-hand-holding-usd"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-9">
-                        <div class="tab-content tab-codi" id="v-pills-tabContent">
-                            <div class="tab-pane fade active show" id="v-pills-codi-ft1" role="tabpanel"
-                                aria-labelledby="v-pills-codi-ft1-tab">
-                                <h6>Paga con CoDi</h6>
-                                <p class="codi-info-tabtext">
-                                    Diseñada para personas o negocios que deseen pagar por
-                                    cualquier tipo de bien o servicio
-                                </p>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-codi-ft2" role="tabpanel"
-                                aria-labelledby="v-pills-codi-ft2-tab">
-                                <h6>Paga con CoDiS</h6>
-                                <p class="codi-info-tabtext">
-                                    Diseñada para personas o negocios que deseen pagar por
-                                    cualquier tipo de bien o servicio
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Demo animada de la AI Factory -->
+    <div class="factory-wrap reveal" id="demo" style="--d:700ms">
+      <div class="factory" id="factory" role="region" aria-label="Demostración ilustrativa: la AI Factory ejecuta cada fase con subagentes especializados">
+        <div class="studio-top">
+          <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="studio-title">biaya · ai-factory / <b>tarjeta-garantizada</b></span>
+          <span class="studio-badge"><span class="dot" aria-hidden="true"></span><span id="fx-state">Orquestando</span></span>
+          <button class="fx-ctl" type="button" id="fx-toggle" aria-label="Pausar la demostración"><span class="ms" aria-hidden="true">pause</span></button>
         </div>
+        <div class="fx-body" aria-hidden="true">
+          <aside class="fx-orch">
+            <div class="fx-orch-head"><span class="msg-av">B</span><div><b>Orquestador</b><small>Divide el trabajo y asigna subagentes</small></div></div>
+            <p class="fx-need"><span>Necesidad de negocio</span>“Queremos lanzar una tarjeta de crédito garantizada para clientes sin historial crediticio.”</p>
+            <ol class="fx-phases" id="fx-phases"></ol>
+          </aside>
+          <div class="fx-stage" id="fx-stage"></div>
+        </div>
+        <div class="fx-dock" id="fx-dock" aria-hidden="true"></div>
+      </div>
+      <p class="studio-note">Demostración ilustrativa · <a href="ai-factory/">Conoce cada fase y sus subagentes</a></p>
+    </div>
+    <!-- Datos de la animación: copia de las fases de /ai-factory/ (mantener iguales) -->
+    <template id="fx-data">
+      <article class="card spot phase-card reveal" style="--d:0ms" data-gate="tu equipo" data-gate-av="TU">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">lightbulb</span></span><span class="num">FASE 01</span></div>
+        <h3>Descubrimiento</h3>
+        <p>Convertimos la necesidad de negocio en objetivos, métricas y restricciones claras.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Leyendo la necesidad|Clientes sin historial crediticio|Objetivos y métricas definidos"><span class="ms" aria-hidden="true">insights</span>Analista de negocio</li><li data-log="Mapeando el core bancario|Procesador de tarjetas identificado|Mapa de sistemas listo"><span class="ms" aria-hidden="true">travel_explore</span>Explorador de sistemas</li><li data-log="Requisitos de identificación|Bitácora auditable requerida|Restricciones documentadas"><span class="ms" aria-hidden="true">policy</span>Revisor regulatorio</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Brief con objetivos medibles</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo aprueba el alcance</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:80ms" data-gate="arquitecto Biaya" data-gate-av="IB">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">architecture</span></span><span class="num">FASE 02</span></div>
+        <h3>Arquitectura</h3>
+        <p>Diseñamos la solución sobre tus sistemas actuales y definimos los contratos antes de escribir código.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Evaluando alternativas|Servicio de originación y garantía|Diagrama de arquitectura listo"><span class="ms" aria-hidden="true">account_tree</span>Arquitecto de soluciones</li><li data-log="POST /v1/solicitudes|POST /v1/garantias|Contrato OpenAPI válido"><span class="ms" aria-hidden="true">description</span>Diseñador de contratos</li><li data-log="Cliente, garantía y línea|Reglas de integridad|Migraciones generadas"><span class="ms" aria-hidden="true">database</span>Modelador de datos</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Arquitectura y contratos OpenAPI</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Un arquitecto de Biaya aprueba el diseño</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:160ms" data-gate="ingeniero Biaya" data-gate-av="IB">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">code</span></span><span class="num">FASE 03</span></div>
+        <h3>Construcción</h3>
+        <p>Los subagentes escriben el servicio, los adaptadores a tus sistemas y los SDKs, siguiendo el contrato aprobado.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="src/solicitudes.ts|src/garantias.ts|Servicio compilado"><span class="ms" aria-hidden="true">terminal</span>Desarrollador de servicios</li><li data-log="Adaptador del core bancario|Adaptador del procesador|Reintentos e idempotencia"><span class="ms" aria-hidden="true">hub</span>Integrador de sistemas</li><li data-log="SDK TypeScript|SDK Java|SDK Python"><span class="ms" aria-hidden="true">data_object</span>Generador de SDKs</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Código en tu repositorio</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Un ingeniero de Biaya revisa el código</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:0ms" data-gate="tu equipo" data-gate-av="TU">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">science</span></span><span class="num">FASE 04</span></div>
+        <h3>Calidad</h3>
+        <p>Generamos las pruebas junto con el código y las ejecutamos en cada cambio.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Casos válidos y de error|Límites de crédito y garantía|Todas en verde"><span class="ms" aria-hidden="true">task_alt</span>Pruebas unitarias</li><li data-log="Core bancario simulado|Procesador simulado|Flujo completo aprobado"><span class="ms" aria-hidden="true">sync_alt</span>Pruebas de integración</li><li data-log="Tráfico concurrente simulado|Latencia dentro del objetivo|Reporte generado"><span class="ms" aria-hidden="true">monitoring</span>Pruebas de carga</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Pruebas automatizadas en verde</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo valida los resultados</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:80ms" data-gate="seguridad Biaya" data-gate-av="IB">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">shield</span></span><span class="num">FASE 05</span></div>
+        <h3>Seguridad</h3>
+        <p>Revisamos el código, las dependencias y el cumplimiento antes de que nada llegue a tus ambientes.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Escaneando el código|Sin hallazgos críticos|Reporte listo"><span class="ms" aria-hidden="true">bug_report</span>Análisis estático</li><li data-log="Revisando librerías|Licencias verificadas|Sin vulnerabilidades conocidas"><span class="ms" aria-hidden="true">inventory_2</span>Auditor de dependencias</li><li data-log="Datos sensibles cifrados|Bitácora de cada operación|Evidencia para auditoría"><span class="ms" aria-hidden="true">verified_user</span>Revisor de cumplimiento</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Reporte de seguridad y evidencias</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Seguridad de Biaya aprueba</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:160ms" data-gate="tu equipo" data-gate-av="TU">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">rocket_launch</span></span><span class="num">FASE 06</span></div>
+        <h3>Despliegue</h3>
+        <p>Desplegamos en tu infraestructura, con tu CI/CD, y dejamos todo listo para operar.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Build de la imagen|Pipeline en verde|Desplegado en pruebas"><span class="ms" aria-hidden="true">deployed_code</span>Ingeniero de CI/CD</li><li data-log="Métricas y alertas|Tableros de operación|Monitoreo activo"><span class="ms" aria-hidden="true">monitor_heart</span>Observabilidad</li><li data-log="Portal de la API|Runbooks de operación|Documentación publicada"><span class="ms" aria-hidden="true">menu_book</span>Redactor técnico</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Servicio en tu ambiente de pruebas</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo libera el despliegue</span></div>
+      </article>
+    </template>
+  </div>
+</section>
+
+<!-- ===================== TECNOLOGÍAS ===================== -->
+<section class="logos" aria-label="Tecnologías con las que integramos">
+  <p>Integramos con lo que tu organización ya usa</p>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span><span class="ms" aria-hidden="true">account_balance</span>SPEI</span>
+      <span><span class="ms" aria-hidden="true">qr_code_2</span>CoDi</span>
+      <span><span class="ms" aria-hidden="true">database</span>Oracle</span>
+      <span><span class="ms" aria-hidden="true">database</span>PostgreSQL</span>
+      <span><span class="ms" aria-hidden="true">swap_horiz</span>IBM MQ</span>
+      <span><span class="ms" aria-hidden="true">stream</span>Kafka</span>
+      <span><span class="ms" aria-hidden="true">inventory_2</span>SAP</span>
+      <span><span class="ms" aria-hidden="true">groups</span>Salesforce</span>
+      <span><span class="ms" aria-hidden="true">cloud</span>AWS</span>
+      <span><span class="ms" aria-hidden="true">cloud</span>Azure</span>
+      <span><span class="ms" aria-hidden="true">cloud</span>Google Cloud</span>
+      <span><span class="ms" aria-hidden="true">dns</span>On-premise</span>
+      <span><span class="ms" aria-hidden="true">deployed_code</span>Kubernetes</span>
+      <span><span class="ms" aria-hidden="true">api</span>REST · gRPC · SOAP</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUÉ HACEMOS ===================== -->
+<section class="section" id="que-hacemos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Qué hacemos</span>
+      <h2 class="split">Tres formas de llevar la IA <span class="grad-text">a producción.</span></h2>
     </div>
 
-    <div class="our-products">
-        <div class="container" id="productos">
-            <h6>Plataforma tecnológica</h6>
-            <h2>Nuestros <strong>productos</strong></h2>
-            <div class="biaya-core-info">
-                <h3>Biaya Core</h3>
-                <p class="text-justify">
-                    Es la base tecnológica de Biaya la cual puede ser adquirida por alguna
-                    organización que dese integrar la funcionalidad CoDi en varias formas
-                </p>
-                <div class="row">
-                    <div class="col-3">
-                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
-                            aria-orientation="vertical">
-                            <a class="nav-link nav-route active show" id="v-pills-home-tab" data-toggle="pill"
-                                href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">Ruta
-                                1</a>
-                            <a class="nav-link nav-route" id="v-pills-profile-tab" data-toggle="pill"
-                                href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                                aria-selected="true">Ruta 2</a>
-                            <a class="nav-link nav-route" id="v-pills-messages-tab" data-toggle="pill"
-                                href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                                aria-selected="false">Ruta 3</a>
-                            <a class="nav-link nav-route" id="v-pills-settings-tab" data-toggle="pill"
-                                href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                                aria-selected="false">Ruta 4</a>
-                        </div>
-                    </div>
-                    <div class="col-9">
-                        <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel"
-                                aria-labelledby="v-pills-home-tab">
-                                <h5>Instituciones Financieras</h5>
-                                <h6>SDK para aplicaciones Android y IOS</h6>
-                                <ul>
-                                    <li>Registro de CoDi</li>
-                                    <li>Registro Sub Secuente</li>
-                                    <li>Validación de Cuentas</li>
-                                    <li>Generación de Cobro QR</li>
-                                    <li>Generación de Cobro NFC</li>
-                                    <li>Envío de Cobro mediante Push Notificación</li>
-                                    <li>Historial de Operaciones</li>
-                                    <li>Devoluciones de un pago realizado</li>
-                                    <li>Soporte multi dominio de la red CoDi</li>
-                                </ul>
-                                <h6>Microservicios</h6>
-                                <ul>
-                                    <li>Historial de Operaciones</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                                aria-labelledby="v-pills-profile-tab">
-                                <h5>Instituciones financieras. Ruta 2</h5>
-                                <h6>SDK para aplicaciones Android y IOS</h6>
-                                <ul>
-                                    <li>Registro de CoDi</li>
-                                    <li>Registro Sub Secuente</li>
-                                </ul>
-                                <h6>Microservicios</h6>
-                                <ul>
-                                    <li>Historial de Operaciones</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-                                aria-labelledby="v-pills-messages-tab">
-                                <h5>Instituciones financieras. Ruta 3</h5>
-                                <h6>SDK para aplicaciones Android y IOS</h6>
-                                <ul>
-                                    <li>Soporte multi dominio de la red CoDi</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                                aria-labelledby="v-pills-settings-tab">
-                                <h5>Instituciones financieras. Ruta 4</h5>
-                                <h6>SDK para aplicaciones Android y IOS</h6>
-                                <ul>
-                                    <li>Registro de CoDi</li>
-                                    <li>Soporte multi dominio de la red CoDi</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="biaya-pay-info" id="biaya-pay">
-                <h3>Biaya Pay</h3>
-                <p class="text-justify">
-                    Si la organización interesada desea sumarse de manera rápida y sin
-                    complicaciones a CoDi y al mismo tiempo proveer de soluciones una
-                    solución probada y lista para personalizar el servicio completo de
-                    Biaya Pay te libera de estas complicaciones.
-                </p>
-            </div>
-        </div>
-        <div class="biaya-two-products">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 bp-one">
-                        <h5>BiayaPay</h5>
-                        <h4>One</h4>
-                        <p>
-                            Transferencias electrónicas, de forma rápida, segura y eficiente
-                            Todos los dias de la semana
-                            Certificado por Banxico
-                            Integracion rapida y sencilla
-                            Actualizaciones constantes</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="images/cellphone.png" class="img-fluid" alt="" />
-                    </div>
-                    <div class="col-md-3 bp-plus">
-                        <h5>BiayaPay</h5>
-                        <h4>Plus</h4>
-                        <p>
-                            Transferencias electrónicas, de forma rápida, segura y eficiente
-                            Todos los dias de la semana
-                            Certificado por Banxico
-                            Integracion rapida y sencilla
-                            Actualizaciones constantes
-                            Personalizacion de acuerdo a la institucion</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="offers">
+      <a class="card spot offer reveal" href="ai-factory/">
+        <span class="ic-box"><span class="ms" aria-hidden="true">precision_manufacturing</span></span>
+        <h3>AI Factory</h3>
+        <p>Subagentes de IA especializados construyen cada fase de tu solución. Nuestros ingenieros aprueban cada paso.</p>
+        <span class="more">Conoce el proceso <span class="ms" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a class="card spot offer reveal" style="--d:80ms" href="servicios/">
+        <span class="ic-box"><span class="ms" aria-hidden="true">hub</span></span>
+        <h3>Ingeniería enterprise</h3>
+        <p>Integraciones, modernización de APIs, SDKs y pruebas automatizadas, listos para entornos regulados.</p>
+        <span class="more">Ver servicios <span class="ms" aria-hidden="true">arrow_forward</span></span>
+      </a>
+      <a class="card spot offer reveal" style="--d:160ms" href="servicios/#adopcion">
+        <span class="ic-box"><span class="ms" aria-hidden="true">school</span></span>
+        <h3>IA en tu organización</h3>
+        <p>Procesos, gobierno y capacitación para que tus equipos construyan con IA por su cuenta.</p>
+        <span class="more">Ver cómo <span class="ms" aria-hidden="true">arrow_forward</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INDUSTRIAS (RESUMEN) ===================== -->
+<section class="section" id="industrias">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Industrias</span>
+      <h2 class="split">Hecho para entornos exigentes y regulados.</h2>
     </div>
 
-    <div class="tagline-pay">
-        <div class="container">
-            <h3>
-                Somos una empresa enfocada en promover <br />
-                la competencia en el mercado nacional <br />
-                de medios de pago digital
-            </h3>
-        </div>
+    <div class="ind-cards">
+      <a class="card spot ind-card reveal" href="industrias/#financieros"><span class="ms" aria-hidden="true">account_balance</span><h3>Servicios financieros</h3><p>“Queremos lanzar una tarjeta de crédito garantizada.”</p><span class="more">Ver industria <span class="ms" aria-hidden="true">arrow_forward</span></span></a>
+      <a class="card spot ind-card reveal" style="--d:80ms" href="industrias/#telecom"><span class="ms" aria-hidden="true">cell_tower</span><h3>Telecomunicaciones</h3><p>“Queremos activar planes al instante.”</p><span class="more">Ver industria <span class="ms" aria-hidden="true">arrow_forward</span></span></a>
+      <a class="card spot ind-card reveal" style="--d:160ms" href="industrias/#retail"><span class="ms" aria-hidden="true">shopping_bag</span><h3>Retail y comercio</h3><p>“Nuestro inventario en línea no cuadra con el de tienda.”</p><span class="more">Ver industria <span class="ms" aria-hidden="true">arrow_forward</span></span></a>
+      <a class="card spot ind-card reveal" style="--d:240ms" href="industrias/#gobierno"><span class="ms" aria-hidden="true">policy</span><h3>Gobierno</h3><p>“Queremos que los ciudadanos hagan trámites en línea.”</p><span class="more">Ver industria <span class="ms" aria-hidden="true">arrow_forward</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTROL (RESUMEN) ===================== -->
+<section class="section" id="control">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Control tuyo</span>
+      <h2 class="split">Velocidad de la IA, sin perder el control.</h2>
     </div>
 
-    <div class="difference" id="ventajas">
-        <div class="container">
-            <h6>Buscamos democratizar el uso CoDi</h6>
-            <h2>¿Nuestras <strong>ventajas</strong>?</h2>
-            <div class="row pros">
-                <div class="col-md-4">
-                    <h5>0.0%</h5>
-                    <span class="divider"></span>
-                    <p>Costo de comisión</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>00:00</h5>
-                    <span class="divider"></span>
-                    <p>Tiempo de dispersión</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>$0.00</h5>
-                    <span class="divider"></span>
-                    <p>Costo de TPV</p>
-                </div>
-            </div>
-            <h4>Las TPV más nuevas proveen los siguientes costos al negocio y cliente</h4>
-            <p class="text-grey">Las comisiones bancarias tradicionales van desde el 0.8% hasta el 1.75%</p>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active show" data-toggle="tab" role="tab" aria-controls="Clip"
-                                id="Clip-tab" href="#Clip" aria-selected="true">Clip</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" role="tab" aria-controls="iZettle" id="iZettle-tab"
-                                href="#iZettle" aria-selected="false">iZettle</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" role="tab" aria-controls="MercadoPago"
-                                id="MercadoPago-tab" href="#MercadoPago" aria-selected="false">MercadoPago</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" role="tab" aria-controls="SrPago" id="SrPago-tab"
-                                href="#SrPago" aria-selected="false">SrPago</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" role="tab" aria-controls="BillPocket"
-                                id="BillPocket-tab" href="#BillPocket" aria-selected="false">BillPocket</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" role="tab" aria-controls="Netpay" id="Netpay-tab"
-                                href="#Netpay" aria-selected="false">Netpay</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" role="tab" aria-controls="Kiwi" id="Kiwi-tab"
-                                href="#Kiwi" aria-selected="false">Kiwi</a>
-                        </li>
-
-
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade active show" id="Clip" role="tabpanel" aria-labelledby="Clip-tab">
-                            <div class="row cons">
-                                <div class="col-md-4">
-                                    <h5>0.0%</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de comisión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>00:00</h5>
-                                    <span class="divider"></span>
-                                    <p>Tiempo de dispersión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>$0.00</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de TPV</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="iZettle" role="tabpanel" aria-labelledby="iZettle-tab">
-                            <div class="row cons">
-                                <div class="col-md-4">
-                                    <h5>1.0%</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de comisión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>00:00</h5>
-                                    <span class="divider"></span>
-                                    <p>Tiempo de dispersión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>$0.00</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de TPV</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="MercadoPago" role="tabpanel" aria-labelledby="MercadoPago-tab">
-                            <div class="row cons">
-                                <div class="col-md-4">
-                                    <h5>2.0%</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de comisión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>00:00</h5>
-                                    <span class="divider"></span>
-                                    <p>Tiempo de dispersión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>$0.00</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de TPV</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="SrPago" role="tabpanel" aria-labelledby="SrPago-tab">
-                            <div class="row cons">
-                                <div class="col-md-4">
-                                    <h5>3.0%</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de comisión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>00:00</h5>
-                                    <span class="divider"></span>
-                                    <p>Tiempo de dispersión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>$0.00</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de TPV</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="BillPocket" role="tabpanel" aria-labelledby="BillPocket-tab">
-                            <div class="row cons">
-                                <div class="col-md-4">
-                                    <h5>4.0%</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de comisión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>00:00</h5>
-                                    <span class="divider"></span>
-                                    <p>Tiempo de dispersión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>$0.00</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de TPV</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="Netpay" role="tabpanel" aria-labelledby="Netpay-tab">
-                            <div class="row cons">
-                                <div class="col-md-4">
-                                    <h5>5.0%</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de comisión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>00:00</h5>
-                                    <span class="divider"></span>
-                                    <p>Tiempo de dispersión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>$0.00</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de TPV</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="Kiwi" role="tabpanel" aria-labelledby="Kiwi-tab">
-                            <div class="row cons">
-                                <div class="col-md-4">
-                                    <h5>6.0%</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de comisión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>00:00</h5>
-                                    <span class="divider"></span>
-                                    <p>Tiempo de dispersión</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>$0.00</h5>
-                                    <span class="divider"></span>
-                                    <p>Costo de TPV</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="control-grid">
+      <article class="card spot ctrl reveal"><span class="ic"><span class="ms" aria-hidden="true">lock</span></span><h3>El código es tuyo</h3><p>Repositorios, propiedad intelectual y documentación pertenecen a tu organización desde el primer commit.</p></article>
+      <article class="card spot ctrl reveal" style="--d:80ms"><span class="ic"><span class="ms" aria-hidden="true">cloud_done</span></span><h3>En tu infraestructura</h3><p>Desplegamos en tu nube o en tu centro de datos, respetando tus ambientes, tu CI/CD y tus políticas.</p></article>
+      <article class="card spot ctrl reveal" style="--d:160ms"><span class="ic"><span class="ms" aria-hidden="true">shield</span></span><h3>Tus datos no entrenan modelos</h3><p>Tu código y tu información no se usan para entrenar modelos de terceros.</p></article>
     </div>
+    <div class="center-cta reveal"><a class="btn btn-ghost" href="seguridad/">Conoce cómo cuidamos tu operación <span class="ms" aria-hidden="true">arrow_forward</span></a></div>
+  </div>
+</section>
 
-    <footer>
-        <div class="container" id="contacto">
-            <h3>¿Ya te decidiste?, ¿aún tienes dudas?</h3>
-            <h2>Contáctanos</h2>
-            <div class="row form-container">
-                
-                <div class="col-md-4 text-contact">
-                    <p>
-                        Llena el formulario y nuestro equipo te contactará a la brevedad.
-                    </p>
-                    <div class="row">
-                        <div class="col-1"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="col-10">523 Rosemary Street Strasbourg 67000 France</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1"><i class="fas fa-phone-alt"></i></div>
-                        <div class="col-10">55 5555 5555</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1"><i class="fas fa-envelope"></i></div>
-                        <div class="col-10"> contacto@biaya.mx</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1"><i class="fas fa-clock"></i></div>
-                        <div class="col-10">Horarios de lunes a viernes: 9:00 AM - 6:00 PM</div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label class="input-text-label" for="inputEmail4">Correo electrónico</label>
-                                <input type="email" class="form-control" id="inputEmail4" />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="input-text-label" for="inputPassword4">Nombre completo</label>
-                                <input type="text" class="form-control" id="inputPassword4" />
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label class="input-text-label" for="inputEmail4">Compañía</label>
-                                <input type="email" class="form-control is-invalid" id="inputEmail4" />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="input-text-label" for="inputPassword4">Teléfono</label>
-                                <input type="password" class="form-control" id="inputPassword4" />
-                            </div>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                                class="custom-control-input" />
-                            <label class="custom-control-label" for="customRadioInline1">Biaya Core</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                                class="custom-control-input" />
-                            <label class="custom-control-label" for="customRadioInline2">Biaya Pay One</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline3" name="customRadioInline1"
-                                class="custom-control-input" />
-                            <label class="custom-control-label" for="customRadioInline3">Biaya Pay Plus</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="input-text-label" for="exampleFormControlTextarea1">Mensaje</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-biaya">
-                            Solicitar demostración
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="row text-center">
-                
-                <div class="col-12">
-                <nav class="navbar navbar-expand navbar-light bg-transparent">
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                      <ul class="navbar-nav m-auto">
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Aviso de privacidad</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Términos y condiciones</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </nav>   
-                </div>         
-                <div class="col-12">
-                    <img src="images/biaya-footer.svg" alt="" class="m-auto">
-                    <h6><i class="fas fa-copyright"></i> Biaya 2020</h6>
-                </div>    
-            </div>
-        </div>
-    </footer>
-
-    <div class="modal" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style="background-color: #F4FAF9;">
-                <div class="modal-header text-center">
-                    <img src="images/biaya-footer.svg" alt="" class="m-auto">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="form-susbribe" class="form-inline m-auto">
-
-                        <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-                        
-                        <div class="form-group soon-form">
-                            <label for="inputMail" class="sr-only">Correo electrónico</label>
-                            <input type="email" class="form-control" id="inputMail" placeholder="Correo electrónico"/>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer"> 
-                    <button type="submit" class="btn btn-primary mb-2 btn-biaya" data-toggle="modal" data-target="#myModal">Notificarme</button>
-                </div>
-            </div>
-        </div>
+<!-- ===================== CTA ===================== -->
+<section class="section final">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <span class="eyebrow">Contacto</span>
+    <h2 class="split" style="margin-top:18px">¿Qué estás esperando?</h2>
+    <p class="reveal">Agenda una sesión técnica con nuestros ingenieros. Revisamos tu reto y te decimos cómo lo resolveríamos.</p>
+    <div class="cta-actions reveal">
+      <a class="btn btn-green" href="contacto/">Agenda una sesión <span class="ms" aria-hidden="true">arrow_forward</span></a>
+      <a class="btn btn-ghost" href="mailto:contacto@biaya.mx"><span class="ms" aria-hidden="true">mail</span>contacto@biaya.mx</a>
     </div>
+  </div>
+</section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script>
-        $('#myModal')
-            .on('shown.bs.modal', function () {
-                $('#myInput').trigger('focus')
-            }
-        );
-    </script>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span><span>Biaya</span></a>
+        <p>Ingeniería enterprise. Velocidad de la IA. Control tuyo.</p>
+      </div>
+      <div class="footer-col">
+        <h4>AI Factory</h4>
+        <ul>
+          <li><a href="ai-factory/">El proceso</a></li>
+          <li><a href="ai-factory/#fases">Fases y subagentes</a></li>
+          <li><a href="ai-factory/#orquestacion">Human in the loop</a></li>
+          <li><a href="como-trabajamos/">Cómo trabajamos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="servicios/#integraciones">Integraciones enterprise</a></li>
+          <li><a href="servicios/#modernizacion">Modernización de APIs</a></li>
+          <li><a href="servicios/#sdks">SDKs y documentación</a></li>
+          <li><a href="servicios/#adopcion">IA en tu organización</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Industrias</h4>
+        <ul>
+          <li><a href="industrias/#financieros">Servicios financieros</a></li>
+          <li><a href="industrias/#telecom">Telecomunicaciones</a></li>
+          <li><a href="industrias/#retail">Retail y comercio</a></li>
+          <li><a href="industrias/#gobierno">Gobierno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="nosotros/">Nosotros</a></li>
+          <li><a href="seguridad/">Control y seguridad</a></li>
+          <li><a href="contacto/">Contacto</a></li>
+          <li><a href="mailto:contacto@biaya.mx">contacto@biaya.mx</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">biaya</div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> Biaya. Todos los derechos reservados.</p>
+      <p>Hecho en México</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/biaya.js" defer></script>
 </body>
-
 </html>
