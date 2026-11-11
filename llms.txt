@@ -1,0 +1,19 @@
+# Biaya
+
+> Consultoría de ingeniería enterprise en México que lleva el desarrollo con inteligencia artificial a las organizaciones. Combina una AI Factory (un orquestador y subagentes de IA especializados por fase), supervisión de ingenieros en cada paso (human in the loop) y la transferencia de capacidades a los equipos del cliente. Mensaje central: Ingeniería enterprise. Velocidad de la IA. Control tuyo.
+
+- Fundada en 2020 construyendo microservicios y SDKs para incorporar instituciones financieras a CoDi, el sistema de cobros digitales del Banco de México.
+- Biaya no desarrolla modelos de IA ni depende de un proveedor de IA específico.
+- El código, la propiedad intelectual y la documentación pertenecen al cliente; se despliega en la nube o el centro de datos del cliente; los datos del cliente no se usan para entrenar modelos de terceros.
+- Contacto: contacto@biaya.mx · lunes a viernes, 9:00 a 18:00 (hora del centro de México).
+
+## Sitio
+
+- [Inicio](https://biaya.mx/): qué hace Biaya, demostración de la AI Factory y cómo agendar una sesión técnica.
+- [AI Factory](https://biaya.mx/ai-factory/): un orquestador divide cada proyecto en seis fases (descubrimiento, arquitectura, construcción, calidad, seguridad y despliegue); en cada una trabajan subagentes de IA especializados y ninguna fase avanza sin aprobación humana.
+- [Servicios](https://biaya.mx/servicios/): integraciones enterprise de punta a punta, pruebas automatizadas, SDKs y documentación, modernización de APIs e IA en tu organización (procesos, gobierno, plataforma, capacitación, casos de uso y medición).
+- [Industrias](https://biaya.mx/industrias/): servicios financieros y fintech, telecomunicaciones, retail y comercio, gobierno y sector público.
+- [Cómo trabajamos](https://biaya.mx/como-trabajamos/): cinco etapas (idea, diagnóstico, piloto, factory dedicada y transferencia), entregables y preguntas frecuentes.
+- [Control y seguridad](https://biaya.mx/seguridad/): propiedad del código, despliegue en tu infraestructura, datos que no entrenan modelos, gobierno de IA y trazabilidad.
+- [Nosotros](https://biaya.mx/nosotros/): origen en 2020 con CoDi y principios de trabajo.
+- [Contacto](https://biaya.mx/contacto/): formulario para agendar una sesión técnica.

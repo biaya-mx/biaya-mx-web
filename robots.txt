@@ -1,0 +1,14 @@
+# Biaya · https://biaya.mx
+User-agent: *
+Allow: /
+
+# Archivos del sitio anterior que ya no forman parte del contenido
+Disallow: /css/bootstrap
+Disallow: /js/bootstrap
+Disallow: /images/qrpay
+Disallow: /images/qrtagline
+Disallow: /images/cellphone
+Disallow: /images/app-store-badge
+Disallow: /images/google-play-badge
+
+Sitemap: https://biaya.mx/sitemap.xml
