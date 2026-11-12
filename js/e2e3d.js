@@ -104,6 +104,26 @@ const hexPrism = (o, c, r, h) => {
   return o;
 };
 const cylinder = (o, c, r, h, layers = 3) => { for (let i = 0; i <= layers; i++) ring(o, V(c.x, c.y + (h * i) / layers, c.z), r, 28); [0, 1, 2, 3].forEach((i) => { const a = i * Math.PI / 2; seg(o, V(c.x + Math.cos(a) * r, c.y, c.z + Math.sin(a) * r), V(c.x + Math.cos(a) * r, c.y + h, c.z + Math.sin(a) * r)); }); return o; };
+// Polilínea cerrada y extrusión de un contorno 2D (x, y) a lo largo de z
+const poly = (o, pts, closed = true) => { for (let i = 0; i < pts.length - (closed ? 0 : 1); i++) seg(o, pts[i], pts[(i + 1) % pts.length]); return o; };
+const extrude = (o, pts2, cx, y0, cz, depth, links) => {
+  const F = pts2.map(([x, y]) => V(cx + x, y0 + y, cz + depth / 2)); const B = pts2.map(([x, y]) => V(cx + x, y0 + y, cz - depth / 2));
+  poly(o, F); poly(o, B); (links || pts2.map((_, i) => i)).forEach((i) => seg(o, F[i], B[i])); return o;
+};
+// Rectángulo con esquinas redondeadas (contorno 2D, base en y = 0) y los índices de una arista por esquina
+const roundRect = (w, h, r, n = 4) => {
+  const P = []; [[w / 2 - r, r, -Math.PI / 2, 0], [w / 2 - r, h - r, 0, Math.PI / 2], [-w / 2 + r, h - r, Math.PI / 2, Math.PI], [-w / 2 + r, r, Math.PI, 1.5 * Math.PI]]
+    .forEach(([x, y, a0, a1]) => { for (let i = 0; i <= n; i++) { const a = a0 + (a1 - a0) * i / n; P.push([x + Math.cos(a) * r, y + Math.sin(a) * r]); } });
+  return { pts: P, links: [0, 1, 2, 3].map((k) => k * (n + 1) + Math.floor(n / 2)) };
+};
+// Arco en el plano ZY (para formas que miran hacia el eje x)
+const arcZY = (o, c, r, a0, a1, n = 12) => { for (let i = 0; i < n; i++) { const a = a0 + (a1 - a0) * i / n, b = a0 + (a1 - a0) * (i + 1) / n; seg(o, V(c.x, c.y + Math.sin(a) * r, c.z + Math.cos(a) * r), V(c.x, c.y + Math.sin(b) * r, c.z + Math.cos(b) * r)); } return o; };
+// Esfera de líneas: meridianos y paralelos (globo)
+const sphere = (o, c, r, mer = 4, par = 0, n = 32) => {
+  for (let k = 0; k < mer; k++) { const t = (k * Math.PI) / mer; for (let i = 0; i < n; i++) { const a = (i / n) * Math.PI * 2, b = ((i + 1) / n) * Math.PI * 2; seg(o, V(c.x + Math.cos(a) * r * Math.cos(t), c.y + Math.sin(a) * r, c.z + Math.cos(a) * r * Math.sin(t)), V(c.x + Math.cos(b) * r * Math.cos(t), c.y + Math.sin(b) * r, c.z + Math.cos(b) * r * Math.sin(t))); } }
+  for (let j = 1; j <= par; j++) { const lat = -Math.PI / 2 + (j * Math.PI) / (par + 1); ring(o, V(c.x, c.y + Math.sin(lat) * r, c.z), Math.cos(lat) * r, n); }
+  return o;
+};
 const make = (arr, mat) => {
   const g = new LineSegmentsGeometry(); g.setPositions(arr);
   const m = new LineSegments2(g, mat); m.computeLineDistances(); m.userData.total = arr.length / 6;
@@ -127,53 +147,96 @@ const C = {};
 const comp = (id, label, icon, pos, outline, detail, opts = {}) => {
   C[id] = { id, label, icon, pos, top: opts.top || 1.6, out: make(outline, MAT.ghost), det: make(detail, MAT.detail), ...opts };
 };
-{ // iPhone del comercio: pantalla de cobro con monto y símbolo sin contacto
+{ // iPhone del comercio: cuerpo con esquinas redondeadas, cámara, monto en pantalla y símbolo sin contacto
   const p = V(-12.4, 0, 3.4); const o = []; const d = [];
-  box(o, V(p.x, 0.02, p.z), 1.0, 1.9, 0.14);
-  rectXY(d, V(p.x, 0.22, p.z + 0.08), 0.8, 1.45);
-  seg(d, V(p.x - 0.12, 1.55, p.z + 0.09), V(p.x + 0.12, 1.55, p.z + 0.09)); // bocina
-  for (let i = 0; i < 2; i++) seg(d, V(p.x - 0.28, 1.2 - i * 0.14, p.z + 0.09), V(p.x + 0.28 - i * 0.16, 1.2 - i * 0.14, p.z + 0.09)); // monto
-  for (let r = 1; r <= 3; r++) arc(d, V(p.x - 0.12, 0.62, p.z + 0.09), 0.09 * r, -0.75, 0.75, 8); // sin contacto
+  const R = roundRect(1.0, 1.95, 0.16); extrude(o, R.pts, p.x, 0.02, p.z, 0.14, R.links);
+  poly(d, roundRect(0.84, 1.75, 0.1).pts.map(([x, y]) => V(p.x + x, 0.12 + y, p.z + 0.08)));
+  rectXY(d, V(p.x, 1.66, p.z + 0.09), 0.26, 0.07); // isla de la cámara
+  for (let i = 0; i < 2; i++) seg(d, V(p.x - 0.28, 1.3 - i * 0.14, p.z + 0.09), V(p.x + 0.28 - i * 0.16, 1.3 - i * 0.14, p.z + 0.09)); // monto
+  for (let r = 1; r <= 3; r++) arc(d, V(p.x - 0.12, 0.7, p.z + 0.09), 0.09 * r, -0.75, 0.75, 8); // sin contacto
   rectXY(d, V(p.x, 0.3, p.z + 0.09), 0.5, 0.12); // botón cobrar
-  comp('phone', 'iPhone del comercio', 'smartphone', p, o, d, { top: 2.35 });
+  comp('phone', 'iPhone del comercio', 'smartphone', p, o, d, { top: 2.4 });
 }
-{ // Tarjeta sin contacto, de pie frente al iPhone: chip, ondas y número
+{ // Tarjeta sin contacto: esquinas redondeadas, chip, ondas y número
   const p = V(-12.4, 0, -1.6); const o = []; const d = [];
-  box(o, V(p.x, 0.25, p.z), 1.55, 1.0, 0.06);
+  const R = roundRect(1.55, 1.0, 0.1); extrude(o, R.pts, p.x, 0.25, p.z, 0.06, R.links);
   rectXY(d, V(p.x - 0.42, 0.62, p.z + 0.035), 0.32, 0.24); seg(d, V(p.x - 0.58, 0.74, p.z + 0.035), V(p.x - 0.26, 0.74, p.z + 0.035)); seg(d, V(p.x - 0.42, 0.62, p.z + 0.035), V(p.x - 0.42, 0.86, p.z + 0.035));
   for (let r = 1; r <= 3; r++) arc(d, V(p.x + 0.38, 0.74, p.z + 0.035), 0.07 * r, -0.8, 0.8, 8);
   for (let i = 0; i < 4; i++) seg(d, V(p.x - 0.62 + i * 0.3, 0.42, p.z + 0.035), V(p.x - 0.42 + i * 0.3, 0.42, p.z + 0.035));
-  comp('card', 'Tarjeta sin contacto', 'contactless', p, o, d, { top: 1.85 });
+  comp('card', 'Tarjeta sin contacto', 'contactless', p, o, d, { top: 1.9 });
 }
-const service = (id, label, icon, p, w, h, d0, layers = 3, mods = 3) => {
-  const o = []; const d = [];
-  box(o, p, w, h, d0);
-  for (let i = 1; i < layers; i++) { const y = p.y + (h * i) / layers; seg(d, V(p.x - w / 2, y, p.z + d0 / 2), V(p.x + w / 2, y, p.z + d0 / 2)); seg(d, V(p.x + w / 2, y, p.z + d0 / 2), V(p.x + w / 2, y, p.z - d0 / 2)); }
-  for (let i = 0; i < mods; i++) box(d, V(p.x - w / 2 + (w / mods) * (i + 0.5), p.y + h + 0.02, p.z), (w / mods) * 0.62, 0.22 + (i % 2) * 0.12, d0 * 0.55);
-  for (let i = 0; i < 4; i++) rectXY(d, V(p.x - w / 2 + 0.25 + i * 0.22, p.y + 0.12, p.z + d0 / 2 + 0.01), 0.12, 0.08);
-  comp(id, label, icon, p, o, d, { top: h + 0.75 });
-};
-service('mer', 'Alta de comercios', 'storefront', V(-6.2, 0, -5.6), 2.2, 0.9, 1.6, 2, 2);
-service('gw', 'API Gateway', 'api', V(-6.2, 0, 3.4), 2.0, 0.8, 1.5, 2, 3);
-service('soft', 'Plataforma de aceptación', 'hub', V(-1.4, 0, 3.4), 2.8, 1.2, 2.0, 3, 4);
-service('att', 'Atestación del dispositivo', 'verified_user', V(-1.4, 0, 7.6), 2.4, 0.9, 1.4, 2, 3);
-service('core', 'Core de pagos', 'account_balance', V(3.6, 0, -0.4), 2.6, 1.2, 1.9, 3, 3);
-{ // HSM con candado: descifra los datos de la tarjeta
+{ // Alta de comercios: tienda con toldo, letrero, puerta y aparador
+  const p = V(-6.2, 0, -5.6); const o = []; const d = [];
+  box(o, p, 2.0, 1.15, 1.4); box(o, V(p.x, 1.15, p.z), 2.2, 0.12, 1.6);
+  const f = p.z + 0.7; // fachada
+  [[-1.0, 1.0]].forEach(([x0, x1]) => { seg(o, V(p.x + x0, 0.98, f), V(p.x + x0, 0.72, f + 0.45)); seg(o, V(p.x + x1, 0.98, f), V(p.x + x1, 0.72, f + 0.45)); seg(o, V(p.x + x0, 0.72, f + 0.45), V(p.x + x1, 0.72, f + 0.45)); });
+  for (let i = 1; i < 8; i++) { const x = p.x - 1.0 + (2.0 * i) / 8; seg(d, V(x, 0.98, f), V(x, 0.72, f + 0.45)); } // rayas del toldo
+  for (let i = 0; i < 8; i++) { const x0 = p.x - 1.0 + (2.0 * i) / 8, x1 = x0 + 2.0 / 8; arc(d, V((x0 + x1) / 2, 0.72, f + 0.45), 0.125, Math.PI, 2 * Math.PI, 5); } // festón
+  rectXY(d, V(p.x + 0.55, 0, f + 0.01), 0.42, 0.66); seg(d, V(p.x + 0.42, 0.33, f + 0.02), V(p.x + 0.46, 0.33, f + 0.02)); // puerta
+  rectXY(d, V(p.x - 0.35, 0.18, f + 0.01), 0.9, 0.42); seg(d, V(p.x - 0.35, 0.18, f + 0.01), V(p.x - 0.35, 0.6, f + 0.01)); // aparador
+  rectXY(d, V(p.x, 1.3, f + 0.11), 1.2, 0.28); // letrero
+  comp('mer', 'Alta de comercios', 'storefront', p, o, d, { top: 2.2 });
+}
+{ // API Gateway: un arco por el que cruzan las peticiones (flechas en el piso)
+  const p = V(-6.2, 0, 3.4); const o = []; const d = [];
+  box(o, V(p.x, 0, p.z - 0.72), 1.0, 1.25, 0.3); box(o, V(p.x, 0, p.z + 0.72), 1.0, 1.25, 0.3); box(o, V(p.x, 1.25, p.z), 1.0, 0.3, 1.74);
+  arcZY(d, V(p.x - 0.5, 0.7, p.z), 0.57, 0, Math.PI, 12); arcZY(d, V(p.x + 0.5, 0.7, p.z), 0.57, 0, Math.PI, 12);
+  for (const dz of [-0.22, 0.22]) { const y = 0.05; seg(d, V(p.x - 1.5, y, p.z + dz), V(p.x + 1.5, y, p.z + dz)); seg(d, V(p.x + 1.5, y, p.z + dz), V(p.x + 1.3, y, p.z + dz + 0.14)); seg(d, V(p.x + 1.5, y, p.z + dz), V(p.x + 1.3, y, p.z + dz - 0.14)); }
+  comp('gw', 'API Gateway', 'api', p, o, d, { top: 2.3 });
+}
+{ // Plataforma de aceptación: tres racks de servidores con unidades y luces
+  const p = V(-1.4, 0, 3.4); const o = []; const d = [];
+  [-0.92, 0, 0.92].forEach((dx) => {
+    box(o, V(p.x + dx, 0, p.z), 0.82, 1.7, 1.4);
+    for (let u = 1; u < 7; u++) seg(d, V(p.x + dx - 0.36, u * 0.24, p.z + 0.71), V(p.x + dx + 0.36, u * 0.24, p.z + 0.71));
+    for (let u = 0; u < 7; u++) rectXY(d, V(p.x + dx + 0.24, u * 0.24 + 0.08, p.z + 0.72), 0.06, 0.06);
+  });
+  comp('soft', 'Plataforma de aceptación', 'hub', p, o, d, { top: 2.45 });
+}
+{ // Atestación del dispositivo: escudo de pie con palomita
+  const p = V(-1.4, 0, 7.6); const o = []; const d = [];
+  const S = [[-0.72, 1.6], [0, 1.78], [0.72, 1.6], [0.72, 0.9], [0.48, 0.42], [0, 0.08], [-0.48, 0.42], [-0.72, 0.9]].map(([x, y]) => [x * 1.3, y * 1.3]);
+  extrude(o, S, p.x, 0, p.z, 0.4);
+  poly(d, S.map(([x, y]) => V(p.x + x * 0.8, 0.22 + y * 0.82, p.z + 0.21)));
+  seg(d, V(p.x - 0.4, 1.2, p.z + 0.21), V(p.x - 0.1, 0.88, p.z + 0.21)); seg(d, V(p.x - 0.1, 0.88, p.z + 0.21), V(p.x + 0.45, 1.52, p.z + 0.21));
+  rectXZ(d, V(p.x, 0.01, p.z), 2.2, 1.1); // base
+  comp('att', 'Atestación del dispositivo', 'verified_user', p, o, d, { top: 3.05 });
+}
+{ // Core de pagos: edificio de banco con columnas, frontón y escalinata
+  const p = V(3.6, 0, -0.4); const o = []; const d = [];
+  box(o, p, 2.7, 0.22, 2.0); box(o, V(p.x, 1.24, p.z), 2.7, 0.2, 2.0);
+  const ft = (z) => [V(p.x - 1.35, 1.44, z), V(p.x + 1.35, 1.44, z), V(p.x, 2.0, z)];
+  const Fr = ft(p.z + 1.0), Bk = ft(p.z - 1.0); poly(o, Fr); poly(o, Bk); [0, 1, 2].forEach((i) => seg(o, Fr[i], Bk[i]));
+  for (let i = 0; i < 5; i++) { const x = p.x - 1.0 + i * 0.5; box(d, V(x, 0.22, p.z + 0.72), 0.16, 1.02, 0.16); box(d, V(x, 0.22, p.z - 0.72), 0.16, 1.02, 0.16); }
+  ring(d, V(p.x, 1.66, p.z + 1.01), 0.14, 18, 'z'); // moneda en el frontón
+  for (let i = 1; i <= 2; i++) seg(d, V(p.x - 1.35 - i * 0.1, 0.22 - i * 0.07, p.z + 1.0 + i * 0.12), V(p.x + 1.35 + i * 0.1, 0.22 - i * 0.07, p.z + 1.0 + i * 0.12)); // escalones
+  comp('core', 'Core de pagos', 'account_balance', p, o, d, { top: 2.7 });
+}
+{ // HSM y llaves: caja fuerte con perilla, manija y bisagras
   const p = V(3.6, 0, 7.6); const o = []; const d = [];
-  box(o, p, 1.7, 1.0, 1.4);
-  rectXY(d, V(p.x, 0.25, p.z + 0.71), 0.5, 0.36); arc(d, V(p.x, 0.61, p.z + 0.71), 0.17, 0, Math.PI, 10);
-  for (let i = 1; i < 4; i++) seg(d, V(p.x - 0.85, i * 0.25, p.z - 0.7), V(p.x - 0.85, i * 0.25, p.z + 0.7));
-  comp('hsm', 'HSM y llaves', 'lock', p, o, d, { top: 1.75 });
+  box(o, V(p.x, 0.1, p.z), 1.6, 1.3, 1.3); [[-0.62, -0.5], [0.62, -0.5], [-0.62, 0.5], [0.62, 0.5]].forEach(([dx, dz]) => box(o, V(p.x + dx, 0, p.z + dz), 0.12, 0.1, 0.12)); // patas
+  const f = p.z + 0.66;
+  rectXY(d, V(p.x, 0.2, f), 1.38, 1.1);
+  ring(d, V(p.x + 0.12, 0.75, f + 0.01), 0.3, 24, 'z'); ring(d, V(p.x + 0.12, 0.75, f + 0.01), 0.08, 12, 'z');
+  for (let k = 0; k < 4; k++) { const a = (k * Math.PI) / 2 + 0.4; seg(d, V(p.x + 0.12 + Math.cos(a) * 0.1, 0.75 + Math.sin(a) * 0.1, f + 0.01), V(p.x + 0.12 + Math.cos(a) * 0.28, 0.75 + Math.sin(a) * 0.28, f + 0.01)); }
+  seg(d, V(p.x + 0.55, 0.55, f + 0.02), V(p.x + 0.55, 0.95, f + 0.02)); // manija
+  [0.38, 1.1].forEach((y) => rectXY(d, V(p.x - 0.72, y, f + 0.02), 0.06, 0.16)); // bisagras
+  comp('hsm', 'HSM y llaves', 'lock', p, o, d, { top: 2.15 });
 }
-{ // Gestión de terminales: cada iPhone activo es una terminal registrada
+{ // Gestión de terminales: base de datos de discos apilados
   const p = V(3.6, 0, 3.6); const o = []; const d = [];
-  cylinder(o, p, 0.8, 1.1, 1); cylinder(d, V(p.x, 0.15, p.z), 0.6, 0.8, 3);
-  comp('tms', 'Gestión de terminales', 'database', p, o, d, { top: 1.85 });
+  [0, 0.42, 0.84].forEach((y) => { cylinder(o, V(p.x, y, p.z), 0.78, 0.34, 1); ring(d, V(p.x, y + 0.17, p.z), 0.79, 28); });
+  for (let i = 0; i < 3; i++) rectXY(d, V(p.x - 0.35 + i * 0.12, 0.42 * i + 0.12, p.z + 0.79), 0.05, 0.05); // luces
+  comp('tms', 'Gestión de terminales', 'database', p, o, d, { top: 1.95 });
 }
-const net = (id, label, p) => {
+const net = (id, label, p) => { // Red de pagos: globo con anillo de órbita
   const o = []; const d = [];
-  hexPrism(o, p, 1.5, 0.9); hexPrism(d, V(p.x, 0.9, p.z), 0.9, 0.35); ring(d, V(p.x, 0.02, p.z), 1.9, 36); ring(d, V(p.x, 1.25, p.z), 0.45, 18);
-  comp(id, label, 'public', p, o, d, { top: 2.0 });
+  const c = V(p.x, 1.25, p.z);
+  sphere(o, c, 1.1, 4, 0);
+  sphere(d, c, 1.1, 0, 3); ring(d, V(p.x, 0.02, p.z), 1.3, 36);
+  for (let i = 0; i < 40; i++) { const a = (i / 40) * Math.PI * 2, b = ((i + 1) / 40) * Math.PI * 2; const pt = (t) => V(c.x + Math.cos(t) * 1.6, c.y + Math.sin(t) * 0.45, c.z + Math.sin(t) * 0.9); seg(d, pt(a), pt(b)); } // órbita inclinada
+  seg(o, V(p.x, 0.02, p.z), V(p.x, 0.15, p.z));
+  comp(id, label, 'public', p, o, d, { top: 3.05 });
 };
 net('visa', 'Red Visa', V(10.6, 0, 4.2));
 net('mc', 'Red Mastercard', V(10.6, 0, -2.8));
