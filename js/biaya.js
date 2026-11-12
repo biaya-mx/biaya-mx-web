@@ -47,6 +47,26 @@
   $$('a', links).forEach((a) => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
+  /* ---------- Submenú de productos ---------- */
+  const dd = $('.nav-dd');
+  if (dd) {
+    const ddBtn = $('.nav-dd-btn', dd);
+    const desktop = window.matchMedia('(min-width: 1101px) and (hover: hover)');
+    let ddTimer = 0;
+    const setDd = (open) => {
+      clearTimeout(ddTimer);
+      dd.classList.toggle('open', open);
+      ddBtn.setAttribute('aria-expanded', String(open));
+    };
+    // Con mouse en escritorio el clic solo abre (ya se abrió al pasar el cursor); con teclado alterna
+    ddBtn.addEventListener('click', (e) => setDd(desktop.matches && e.detail > 0 ? true : !dd.classList.contains('open')));
+    dd.addEventListener('mouseenter', () => { if (desktop.matches) setDd(true); });
+    dd.addEventListener('mouseleave', () => { if (desktop.matches) ddTimer = setTimeout(() => setDd(false), 180); });
+    dd.addEventListener('focusout', (e) => { if (desktop.matches && !dd.contains(e.relatedTarget)) setDd(false); });
+    document.addEventListener('click', (e) => { if (!dd.contains(e.target)) setDd(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && dd.classList.contains('open')) { setDd(false); ddBtn.focus(); } });
+  }
+
   /* ---------- Nav: fondo al hacer scroll ---------- */
   const nav = $('.nav');
   const onScrollNav = () => nav.classList.toggle('scrolled', window.scrollY > 10);
@@ -406,6 +426,130 @@
     } else {
       fxVisible = true;
       runFactory();
+    }
+  }
+
+  /* ---------- AI Factory: caso de punta a punta (de la idea a producción) ----------
+     Controla las fases: lista, descripción, bitácora de subagentes y human in the loop.
+     Publica el estado en window.biayaE2E para la escena 3D (js/e2e3d.js, Three.js), que se
+     descarga solo cuando la sección está cerca. Sin WebGL queda un resumen en texto. */
+  const e2e = $('#e2e');
+  if (e2e) {
+    const scene = $('.e2e-scene', e2e);
+    const steps = $$('.e2e-step', e2e);
+    const desc = $('#e2e-desc');
+    const logEl = $('#e2e-log');
+    const hitl = $('#e2e-hitl');
+    const hitlWho = $('#e2e-hitl-who');
+    const hitlText = $('#e2e-hitl-t');
+    const stateEl = $('#e2e-state');
+    const toggle = $('#e2e-toggle');
+    const N = steps.length;
+    const B = window.biayaE2E = { stage: N, p: 1, t: 0, running: false, version: 0, reduceMotion };
+    const WAIT_AT = 0.62; // la persona revisa…
+    const OK_AT = 0.8; //  …y aprueba
+    let clock = 0;
+    let stageAt = 0;
+    let shown = 0;
+    let gate = '';
+    let paused = false;
+    let visible = false;
+
+    const setGate = (g) => {
+      if (g === gate) return;
+      gate = g;
+      const cur = steps[B.stage - 1];
+      hitl.classList.toggle('wait', g === 'wait');
+      hitl.classList.toggle('ok', g === 'ok');
+      if (!cur) return;
+      hitlText.textContent = g === 'ok' ? `Aprobado · ${cur.dataset.gate}` : g === 'wait' ? `Revisa · ${cur.dataset.gate}` : 'Subagentes trabajando';
+    };
+    const showLog = (n) => {
+      const cur = steps[B.stage - 1];
+      const lines = cur ? cur.dataset.log.split('|') : [];
+      for (; shown < Math.min(n, lines.length); shown++) {
+        const li = document.createElement('li');
+        const [who, ...what] = lines[shown].split(':');
+        li.innerHTML = '<b></b><span></span>';
+        li.firstChild.textContent = what.length ? who : '';
+        li.lastChild.textContent = what.length ? what.join(':').trim() : who;
+        logEl.appendChild(li);
+        while (logEl.children.length > 4) logEl.firstChild.remove();
+      }
+    };
+
+    const setStage = (n) => {
+      B.stage = n; B.p = reduceMotion ? 1 : 0; B.version++;
+      stageAt = clock; shown = 0; gate = '';
+      logEl.textContent = '';
+      steps.forEach((s, i) => {
+        s.classList.toggle('on', i === n - 1);
+        s.classList.toggle('done', i < n - 1);
+        s.setAttribute('aria-current', i === n - 1 ? 'step' : 'false');
+        s.style.setProperty('--p', i < n - 1 ? 1 : 0);
+      });
+      const cur = steps[n - 1];
+      if (!cur) { stateEl.textContent = 'Por empezar'; setGate('work'); return; }
+      // En pantallas angostas la fila de fases se desliza para mostrar la activa
+      const list = cur.closest('ol');
+      if (list.scrollWidth > list.clientWidth) list.scrollTo({ left: cur.parentElement.offsetLeft - (list.clientWidth - cur.offsetWidth) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+      stateEl.textContent = cur.dataset.label;
+      desc.textContent = cur.dataset.d;
+      hitlWho.textContent = cur.dataset.gateAv;
+      hitlWho.classList.toggle('tu', cur.dataset.gateAv === 'TU');
+      setGate('work');
+      if (reduceMotion) { cur.style.setProperty('--p', 1); showLog(9); setGate('ok'); }
+    };
+
+    steps.forEach((s, i) => s.addEventListener('click', () => setStage(i + 1)));
+
+    if (reduceMotion) {
+      setStage(N);
+      toggle.hidden = true;
+    } else {
+      setStage(0);
+      let last = 0;
+      const loop = (now) => {
+        requestAnimationFrame(loop);
+        const dt = last ? Math.min(64, now - last) : 0;
+        last = now;
+        B.running = !paused && visible;
+        if (!B.running) return;
+        clock += dt; B.t = clock / 1000;
+        const el = clock - stageAt;
+        if (B.stage === 0) { if (el >= 900) setStage(1); return; }
+        const cur = steps[B.stage - 1];
+        const ms = +cur.dataset.ms || 8000;
+        B.p = Math.min(1, el / ms);
+        cur.style.setProperty('--p', B.p);
+        showLog(Math.floor(B.p / 0.15) + 1);
+        setGate(B.p >= OK_AT ? 'ok' : B.p >= WAIT_AT ? 'wait' : 'work');
+        if (el >= ms + (B.stage === N ? 4000 : 600)) setStage(B.stage === N ? 0 : B.stage + 1);
+      };
+      requestAnimationFrame(loop);
+
+      toggle.addEventListener('click', () => {
+        paused = !paused;
+        e2e.classList.toggle('paused', paused);
+        $('.ms', toggle).textContent = paused ? 'play_arrow' : 'pause';
+        toggle.setAttribute('aria-label', paused ? 'Reanudar la animación' : 'Pausar la animación');
+      });
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => entries.forEach((en) => { visible = en.isIntersecting; }), { threshold: 0.25 }).observe(scene);
+      } else {
+        visible = true;
+      }
+    }
+
+    const src3d = e2e.dataset.sceneSrc;
+    if (src3d && 'IntersectionObserver' in window) {
+      const near = new IntersectionObserver((entries) => {
+        if (!entries.some((en) => en.isIntersecting)) return;
+        near.disconnect();
+        import(new URL(src3d, document.baseURI).href).catch(() => { /* sin WebGL o sin red: queda el resumen en texto */ });
+      }, { rootMargin: '900px 0px' });
+      near.observe(scene);
     }
   }
 

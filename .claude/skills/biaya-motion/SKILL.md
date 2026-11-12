@@ -35,6 +35,7 @@ revisar) o guiar la lectura. Todo en CSS y JS puros (`css/biaya.css`, `js/biaya.
 | Línea de tiempo que se dibuja | `.timeline` (se activa con `.in`) |
 | Anillo de progreso | `svg.ring` con `.fg` (stroke-dashoffset a 0 cuando el padre tiene `.in`) |
 | Animación AI Factory | `#factory` en el inicio y en `/ai-factory/` (bloque "AI Factory" de `js/biaya.js`) |
+| Caso de punta a punta (3D de líneas) | `#e2e` en `/ai-factory/`: `js/biaya.js` controla fases, bitácora y human in the loop (datos en `data-*` de cada `.e2e-step`) y publica `window.biayaE2E`; `js/e2e3d.js` (Three.js) dibuja la arquitectura, agentes y flujos. Sin marco: la sección `.e2e-band` ocupa todo el ancho, el lienzo usa el fondo de la sección y se desvanece en los bordes. La cámara hace zoom out por fase (tabla `CAM`): de la idea en primer plano a la arquitectura completa en producción. Caso actual: Tap to Pay en iPhone. Cada componente lleva un nodo HTML con ícono y nombre (`.e2e-node` > `.e2e-ico`, estilo diagrama de producto) con estados `build`, `hot` (pasa el flujo), `ok` (✓) y `fail` (✕); el orquestador es un nodo central (`.orch.hub`). Los íconos nuevos van en `icon_names` de `/ai-factory/`. Sin WebGL queda un resumen en texto |
 
 ### Cambiar la animación de la AI Factory
 

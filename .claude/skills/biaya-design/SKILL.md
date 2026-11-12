@@ -20,6 +20,9 @@ técnicas ("Integra el ERP con el e-commerce"). La tecnología aparece después,
 ## Stack
 
 - HTML + CSS + JS puros. Sin frameworks, sin Tailwind, sin jQuery, sin build.
+  Única excepción: la animación 3D "De la idea a producción" en `/ai-factory/` usa Three.js (r160, desde jsDelivr
+  con `importmap`), en `js/e2e3d.js`, cargada solo cuando la sección está cerca de la pantalla. Estilo: solo líneas
+  3D sobre el fondo de la página, sin marco ni tarjeta (sin cielo, suelo ni rellenos de color). La sección `.e2e-band` es una isla oscura en el tema claro.
 - Archivos: `index.html`, `css/biaya.css`, `js/biaya.js`.
 - Fuentes de Google Fonts: Plus Jakarta Sans (títulos), Inter (texto), JetBrains Mono (etiquetas y código).
 - Íconos: Material Symbols Outlined con `icon_names=` (lista **ordenada alfabéticamente**). Si agregas un ícono
@@ -58,6 +61,11 @@ Reglas:
 - Responsive: probar 1440, 1024, 768 y 390 px.
 
 ## Patrones existentes (reutiliza antes de crear)
+
+- Menú superior (igual en todas las páginas): `Productos ▾` (`.nav-dd`, submenú con AI Factory, Integraciones
+  enterprise, SDKs y APIs, y Plataforma de IA en tu organización), Industrias, Cómo trabajamos, Nosotros y el botón
+  "Agenda una sesión". Seguridad va en el footer. Si cambia un producto, actualiza el submenú en todas las páginas
+  y el catálogo de `/productos/`. `/servicios/` solo redirige a `/productos/`.
 
 - Caja de prompt con borde giratorio: `.prompt-wrap` > `.prompt`.
 - Ventana tipo IDE: `.studio` (chat del agente + pestañas Código/Pruebas/Despliegue).

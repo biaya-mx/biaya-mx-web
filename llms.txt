@@ -11,7 +11,7 @@
 
 - [Inicio](https://biaya.mx/): qué hace Biaya, demostración de la AI Factory y cómo agendar una sesión técnica.
 - [AI Factory](https://biaya.mx/ai-factory/): un orquestador divide cada proyecto en seis fases (descubrimiento, arquitectura, construcción, calidad, seguridad y despliegue); en cada una trabajan subagentes de IA especializados y ninguna fase avanza sin aprobación humana.
-- [Servicios](https://biaya.mx/servicios/): integraciones enterprise de punta a punta, pruebas automatizadas, SDKs y documentación, modernización de APIs e IA en tu organización (procesos, gobierno, plataforma, capacitación, casos de uso y medición).
+- [Productos](https://biaya.mx/productos/): cuatro productos: AI Factory; integraciones enterprise de punta a punta con pruebas automatizadas; SDKs y APIs (librerías, documentación OpenAPI y modernización de APIs); y plataforma de IA en tu organización (procesos, gobierno, plataforma en tu infraestructura, capacitación, casos de uso y medición).
 - [Industrias](https://biaya.mx/industrias/): servicios financieros y fintech, telecomunicaciones, retail y comercio, gobierno y sector público.
 - [Cómo trabajamos](https://biaya.mx/como-trabajamos/): cinco etapas (idea, diagnóstico, piloto, factory dedicada y transferencia), entregables y preguntas frecuentes.
 - [Control y seguridad](https://biaya.mx/seguridad/): propiedad del código, despliegue en tu infraestructura, datos que no entrenan modelos, gobierno de IA y trazabilidad.

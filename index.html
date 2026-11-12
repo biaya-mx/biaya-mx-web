@@ -98,12 +98,12 @@
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Servicios de Biaya",
+          "name": "Productos de Biaya",
           "itemListElement": [
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Factory: soluciones enterprise construidas con IA", "description": "Un orquestador y subagentes de IA especializados ejecutan cada fase (descubrimiento, arquitectura, construcción, calidad, seguridad y despliegue) con aprobación humana.", "url": "https://biaya.mx/ai-factory/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integraciones enterprise de punta a punta", "description": "Integraciones con core, ERP, CRM, colas de mensajes y nubes, con pruebas automatizadas, SDKs y documentación.", "url": "https://biaya.mx/servicios/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Modernización de APIs e integraciones", "description": "Contratos, pruebas y documentación para APIs REST, gRPC y SOAP.", "url": "https://biaya.mx/servicios/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adopción de IA en tu organización", "description": "Procesos de desarrollo con IA, gobierno y políticas de IA, plataforma en tu infraestructura, capacitación y medición de resultados.", "url": "https://biaya.mx/servicios/#adopcion" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integraciones enterprise de punta a punta", "description": "Integraciones con core, ERP, CRM, colas de mensajes y nubes, con pruebas automatizadas, SDKs y documentación.", "url": "https://biaya.mx/productos/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Modernización de APIs e integraciones", "description": "Contratos, pruebas y documentación para APIs REST, gRPC y SOAP.", "url": "https://biaya.mx/productos/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adopción de IA en tu organización", "description": "Procesos de desarrollo con IA, gobierno y políticas de IA, plataforma en tu infraestructura, capacitación y medición de resultados.", "url": "https://biaya.mx/productos/#adopcion" } }
           ]
         }
       },
@@ -133,7 +133,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&icon_names=account_balance,account_tree,add,alt_route,api,architecture,arrow_forward,arrow_upward,auto_awesome,bolt,bug_report,cell_tower,check,check_circle,close,cloud,cloud_done,cloud_upload,code,credit_card,dark_mode,data_object,database,deployed_code,description,dns,error,folder,groups,hub,insights,inventory_2,light_mode,lightbulb,lock,mail,menu,menu_book,monitor_heart,monitoring,pause,person_check,play_arrow,policy,precision_manufacturing,progress_activity,qr_code_2,radio_button_unchecked,rocket_launch,schedule,school,science,security,shield,shopping_bag,smart_toy,stream,supervised_user_circle,swap_horiz,sync_alt,task_alt,terminal,travel_explore,verified,verified_user&display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&icon_names=account_balance,account_tree,add,alt_route,api,architecture,arrow_forward,arrow_upward,auto_awesome,bolt,bug_report,cell_tower,check,check_circle,close,cloud,cloud_done,cloud_upload,code,construction,credit_card,dark_mode,data_object,database,deployed_code,description,dns,error,expand_more,fact_check,folder,groups,hub,insights,inventory_2,light_mode,lightbulb,lock,mail,menu,menu_book,monitor_heart,monitoring,pause,person_check,play_arrow,policy,precision_manufacturing,progress_activity,qr_code_2,radio_button_unchecked,rocket_launch,schedule,school,science,security,shield,shopping_bag,smart_toy,stream,supervised_user_circle,swap_horiz,sync_alt,task_alt,terminal,travel_explore,verified,verified_user&display=block" rel="stylesheet">
   <link rel="stylesheet" href="css/biaya.css">
   <script>
     document.documentElement.className = "js";
@@ -155,11 +155,18 @@
       <span class="ms" aria-hidden="true">menu</span>
     </button>
     <nav class="nav-links" id="nav-links" aria-label="Principal">
-      <a href="ai-factory/">AI Factory</a>
-      <a href="servicios/">Servicios</a>
+      <div class="nav-dd">
+        <button class="nav-dd-btn" type="button" aria-expanded="false" aria-controls="nav-productos">Productos<span class="ms" aria-hidden="true">expand_more</span></button>
+        <div class="nav-dd-panel" id="nav-productos">
+          <a href="ai-factory/"><span class="ms" aria-hidden="true">precision_manufacturing</span><span><b>AI Factory</b><small>De la idea a producción con subagentes y aprobación humana</small></span></a>
+          <a href="productos/#integraciones"><span class="ms" aria-hidden="true">hub</span><span><b>Integraciones enterprise</b><small>Core, ERP, CRM y nubes, con pruebas automatizadas</small></span></a>
+          <a href="productos/#sdks"><span class="ms" aria-hidden="true">code</span><span><b>SDKs y APIs</b><small>Librerías, documentación y modernización de APIs</small></span></a>
+          <a href="productos/#adopcion"><span class="ms" aria-hidden="true">dns</span><span><b>Plataforma de IA en tu organización</b><small>Procesos, gobierno y capacitación en tu infraestructura</small></span></a>
+          <a class="nav-dd-all" href="productos/">Ver todos los productos<span class="ms" aria-hidden="true">arrow_forward</span></a>
+        </div>
+      </div>
       <a href="industrias/">Industrias</a>
       <a href="como-trabajamos/">Cómo trabajamos</a>
-      <a href="seguridad/">Seguridad</a>
       <a href="nosotros/">Nosotros</a>
       <a href="contacto/" class="btn btn-green btn-sm">Agenda una sesión</a>
     </nav>
@@ -317,13 +324,13 @@
         <p>Subagentes de IA especializados construyen cada fase de tu solución. Nuestros ingenieros aprueban cada paso.</p>
         <span class="more">Conoce el proceso <span class="ms" aria-hidden="true">arrow_forward</span></span>
       </a>
-      <a class="card spot offer reveal" style="--d:80ms" href="servicios/">
+      <a class="card spot offer reveal" style="--d:80ms" href="productos/">
         <span class="ic-box"><span class="ms" aria-hidden="true">hub</span></span>
         <h3>Ingeniería enterprise</h3>
         <p>Integraciones, modernización de APIs, SDKs y pruebas automatizadas, listos para entornos regulados.</p>
-        <span class="more">Ver servicios <span class="ms" aria-hidden="true">arrow_forward</span></span>
+        <span class="more">Ver productos <span class="ms" aria-hidden="true">arrow_forward</span></span>
       </a>
-      <a class="card spot offer reveal" style="--d:160ms" href="servicios/#adopcion">
+      <a class="card spot offer reveal" style="--d:160ms" href="productos/#adopcion">
         <span class="ic-box"><span class="ms" aria-hidden="true">school</span></span>
         <h3>IA en tu organización</h3>
         <p>Procesos, gobierno y capacitación para que tus equipos construyan con IA por su cuenta.</p>
@@ -401,12 +408,12 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Servicios</h4>
+        <h4>Productos</h4>
         <ul>
-          <li><a href="servicios/#integraciones">Integraciones enterprise</a></li>
-          <li><a href="servicios/#modernizacion">Modernización de APIs</a></li>
-          <li><a href="servicios/#sdks">SDKs y documentación</a></li>
-          <li><a href="servicios/#adopcion">IA en tu organización</a></li>
+          <li><a href="productos/#integraciones">Integraciones enterprise</a></li>
+          <li><a href="productos/#modernizacion">Modernización de APIs</a></li>
+          <li><a href="productos/#sdks">SDKs y APIs</a></li>
+          <li><a href="productos/#adopcion">Plataforma de IA</a></li>
         </ul>
       </div>
       <div class="footer-col">

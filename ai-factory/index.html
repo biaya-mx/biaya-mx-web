@@ -92,7 +92,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&icon_names=account_balance,account_tree,add,alt_route,api,architecture,arrow_forward,arrow_upward,auto_awesome,bolt,bug_report,cell_tower,check,check_circle,close,cloud,cloud_done,cloud_upload,code,credit_card,dark_mode,data_object,database,deployed_code,description,dns,error,folder,groups,hub,insights,inventory_2,light_mode,lightbulb,lock,mail,menu,menu_book,monitor_heart,monitoring,pause,person_check,play_arrow,policy,precision_manufacturing,progress_activity,qr_code_2,radio_button_unchecked,rocket_launch,schedule,school,science,security,shield,shopping_bag,smart_toy,stream,supervised_user_circle,swap_horiz,sync_alt,task_alt,terminal,travel_explore,verified,verified_user&display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&icon_names=account_balance,account_tree,add,alt_route,api,architecture,arrow_forward,arrow_upward,auto_awesome,bolt,bug_report,cell_tower,check,check_circle,close,cloud,cloud_done,cloud_upload,code,construction,contactless,credit_card,dark_mode,data_object,database,deployed_code,description,dns,error,expand_more,fact_check,folder,groups,hub,insights,inventory_2,light_mode,lightbulb,lock,mail,menu,menu_book,monitor_heart,monitoring,pause,person_check,play_arrow,policy,precision_manufacturing,progress_activity,public,qr_code_2,radio_button_unchecked,rocket_launch,schedule,school,science,security,shield,shopping_bag,smart_toy,smartphone,storefront,stream,supervised_user_circle,swap_horiz,sync_alt,task_alt,terminal,travel_explore,verified,verified_user&display=block" rel="stylesheet">
+  <!-- Three.js para la animación 3D del caso de punta a punta (se descarga solo cerca de la sección) -->
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
   <link rel="stylesheet" href="../css/biaya.css">
   <script>
     document.documentElement.className = "js";
@@ -114,11 +116,18 @@
       <span class="ms" aria-hidden="true">menu</span>
     </button>
     <nav class="nav-links" id="nav-links" aria-label="Principal">
-      <a href="../ai-factory/" aria-current="page">AI Factory</a>
-      <a href="../servicios/">Servicios</a>
+      <div class="nav-dd">
+        <button class="nav-dd-btn active" type="button" aria-expanded="false" aria-controls="nav-productos">Productos<span class="ms" aria-hidden="true">expand_more</span></button>
+        <div class="nav-dd-panel" id="nav-productos">
+          <a href="../ai-factory/" aria-current="page"><span class="ms" aria-hidden="true">precision_manufacturing</span><span><b>AI Factory</b><small>De la idea a producción con subagentes y aprobación humana</small></span></a>
+          <a href="../productos/#integraciones"><span class="ms" aria-hidden="true">hub</span><span><b>Integraciones enterprise</b><small>Core, ERP, CRM y nubes, con pruebas automatizadas</small></span></a>
+          <a href="../productos/#sdks"><span class="ms" aria-hidden="true">code</span><span><b>SDKs y APIs</b><small>Librerías, documentación y modernización de APIs</small></span></a>
+          <a href="../productos/#adopcion"><span class="ms" aria-hidden="true">dns</span><span><b>Plataforma de IA en tu organización</b><small>Procesos, gobierno y capacitación en tu infraestructura</small></span></a>
+          <a class="nav-dd-all" href="../productos/">Ver todos los productos<span class="ms" aria-hidden="true">arrow_forward</span></a>
+        </div>
+      </div>
       <a href="../industrias/">Industrias</a>
       <a href="../como-trabajamos/">Cómo trabajamos</a>
-      <a href="../seguridad/">Seguridad</a>
       <a href="../nosotros/">Nosotros</a>
       <a href="../contacto/" class="btn btn-green btn-sm">Agenda una sesión</a>
     </nav>
@@ -136,8 +145,64 @@
   <div class="wrap">
     <span class="eyebrow reveal">AI Factory</span>
     <h1 class="split">Subagentes especializados. <span class="grad-text">Ingenieros al mando.</span></h1>
-    <p class="lead reveal" style="--d:300ms">Un orquestador divide tu proyecto en fases. En cada una trabajan subagentes de IA expertos en una sola tarea, y nada avanza sin aprobación humana.</p>
-    <div class="factory-wrap reveal" style="--d:450ms">
+    <p class="lead reveal" style="--d:300ms">Un orquestador divide tu proyecto en fases. En cada una trabajan subagentes de IA expertos en una sola tarea, y nada avanza sin aprobación humana. Míralo en un caso de pagos, de la idea a producción.</p>
+  </div>
+</section>
+
+<!-- ===================== CASO DE PUNTA A PUNTA (pieza central de la página) ===================== -->
+<section class="section e2e-band e2e-hero" id="de-la-idea-a-produccion">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Caso de punta a punta · Tap to Pay en iPhone</span>
+      <h2 class="split">Tus comercios cobran con su iPhone. <span class="grad-text">Tu core aprueba cada venta.</span></h2>
+      <p class="reveal">Un caso ilustrativo para bancos y adquirentes: habilitar Tap to Pay en iPhone dentro de tu propia app, para que cualquier comercio acepte tarjetas sin contacto y billeteras digitales sin comprar ni mantener una terminal. Mira cómo la AI Factory lo lleva de la idea a producción.</p>
+    </div>
+
+    <div class="e2e" id="e2e" data-scene-src="../js/e2e3d.js">
+      <div class="e2e-bar reveal">
+        <span class="studio-badge"><span class="dot" aria-hidden="true"></span><span id="e2e-state">La idea</span></span>
+        <button class="fx-ctl" type="button" id="e2e-toggle" aria-label="Pausar la animación"><span class="ms" aria-hidden="true">pause</span></button>
+      </div>
+      <div class="e2e-scene">
+        <ol class="e2e-fallback">
+          <li>La idea: que tus comercios cobren con su iPhone, desde tu app y sin terminal.</li>
+          <li>Activación: la app registra el iPhone como terminal; la plataforma valida al comercio y verifica la integridad del dispositivo.</li>
+          <li>Cobro: el iPhone lee la tarjeta sin contacto, envía los datos cifrados y tu core de pagos autoriza con las redes.</li>
+        </ol>
+        <div class="e2e-log" aria-live="polite"><ul id="e2e-log"></ul></div>
+        <div class="e2e-hitl" id="e2e-hitl"><span class="who tu" id="e2e-hitl-who">TU</span><span><small>Human in the loop</small><b id="e2e-hitl-t">Subagentes trabajando</b></span></div>
+      </div>
+
+      <ol class="e2e-steps" aria-label="Fases del caso">
+        <li><button class="e2e-step" type="button" data-label="La idea" data-gate="tu equipo" data-gate-av="TU" data-ms="7000" data-log="Necesidad: cobrar donde esté el cliente, sin terminal|Para quién: comercios afiliados a tu banco o adquirente|Resultado: el iPhone del comercio cobra desde tu app|Medición: comercios activos y cobros aprobados" data-d="Todo empieza con una necesidad de negocio: que tus comercios cobren en tienda, a domicilio o en un evento con el iPhone que ya tienen, sin comprar ni mantener una terminal."><span class="ms" aria-hidden="true">lightbulb</span><span class="n">00</span><span class="t">La idea</span></button></li>
+        <li><button class="e2e-step" type="button" data-label="Descubrimiento" data-gate="tu equipo" data-gate-av="TU" data-ms="9000" data-log="Analista de negocio: dónde cobran hoy · tienda, entregas y eventos|Explorador de sistemas: core de pagos y alta de comercios actuales|Revisor regulatorio: PCI DSS, PCI MPoC y EMV sin contacto|Orquestador: brief listo para tu aprobación" data-d="Los subagentes identifican actores, sistemas actuales y reglas: PCI DSS, el estándar PCI MPoC para cobrar en celulares y EMV sin contacto."><span class="ms" aria-hidden="true">travel_explore</span><span class="n">01</span><span class="t">Descubrimiento</span></button></li>
+        <li><button class="e2e-step" type="button" data-label="Arquitectura" data-gate="arquitecto Biaya" data-gate-av="IB" data-ms="10000" data-log="Arquitecto de soluciones: el iPhone como terminal de tu core|Diseñador de contratos: activación, cobro y reverso|Modelador de datos: comercios, terminales y transacciones|Orquestador: arquitectura lista para revisión" data-d="La IA propone la arquitectura: la app lee la tarjeta con Tap to Pay en iPhone y tu plataforma envía el cobro a tu core como si viniera de una terminal, con los contratos definidos antes de programar."><span class="ms" aria-hidden="true">architecture</span><span class="n">02</span><span class="t">Arquitectura</span></button></li>
+        <li><button class="e2e-step" type="button" data-label="Construcción" data-gate="ingeniero Biaya" data-gate-av="IB" data-ms="10000" data-log="Desarrollador iOS: lectura sin contacto en la app de cobro|Desarrollador de servicios: plataforma de aceptación y API Gateway|Integrador del core: mensajes de autorización de terminal|Integrador de redes: rutas a Visa y Mastercard" data-d="Cada subagente construye su parte: la app de cobro en iPhone, la plataforma de aceptación, la gestión de terminales y la conexión con tu core de pagos."><span class="ms" aria-hidden="true">construction</span><span class="n">03</span><span class="t">Construcción</span></button></li>
+        <li><button class="e2e-step" type="button" data-label="Calidad" data-gate="tu equipo" data-gate-av="TU" data-ms="10000" data-log="Pruebas de integración: tarjetas físicas y billeteras digitales|Rutas de cobro: aprobado, declinado y reverso|Pruebas de carga: cobros simultáneos|Resultado: flujos de punta a punta en verde" data-d="Se simulan la activación del iPhone y el cobro de punta a punta, con tarjetas sin contacto y billeteras digitales, incluidos declinados y reversos, antes de tocar producción."><span class="ms" aria-hidden="true">fact_check</span><span class="n">04</span><span class="t">Calidad</span></button></li>
+        <li><button class="e2e-step" type="button" data-label="Seguridad" data-gate="seguridad Biaya" data-gate-av="IB" data-ms="8000" data-log="Análisis estático: sin hallazgos críticos|Revisor de cumplimiento: tu app nunca ve el número de tarjeta|HSM: las llaves para descifrar viven en tu infraestructura|Atestación: solo cobran dispositivos íntegros" data-d="Tu app nunca ve el número de tarjeta: viaja cifrado desde la lectura y se descifra en el HSM de tu infraestructura. Solo cobran los dispositivos que pasan la atestación."><span class="ms" aria-hidden="true">shield</span><span class="n">05</span><span class="t">Seguridad</span></button></li>
+        <li><button class="e2e-step" type="button" data-label="Producción" data-gate="tu equipo" data-gate-av="TU" data-ms="12000" data-log="CI/CD: despliegue en tu nube, con tus controles|Primer comercio: activa Tap to Pay en tu app|Primer cobro: captura el monto, el cliente acerca su tarjeta|Observabilidad: activaciones y cobros monitoreados" data-d="En producción, en tu infraestructura: el comercio activa Tap to Pay en tu app, captura el monto, el cliente acerca su tarjeta o su celular y tu core aprueba el cobro."><span class="ms" aria-hidden="true">rocket_launch</span><span class="n">06</span><span class="t">Producción</span></button></li>
+      </ol>
+      <p class="e2e-desc" id="e2e-desc" aria-live="polite">Todo empieza con una necesidad de negocio: que tus comercios cobren en tienda, a domicilio o en un evento con el iPhone que ya tienen, sin comprar ni mantener una terminal.</p>
+    </div>
+    <ul class="e2e-value" aria-label="Lo que gana cada actor">
+      <li class="reveal"><span class="ms" aria-hidden="true">storefront</span><h3>El comercio</h3><p>Cobra donde esté su cliente: en tienda, a domicilio, en una fila o en un evento. Solo necesita su iPhone y tu app.</p></li>
+      <li class="reveal" style="--d:80ms"><span class="ms" aria-hidden="true">account_balance</span><h3>Tu banco o adquirente</h3><p>Tap to Pay vive en tu app y cada cobro llega a tu core como si viniera de una terminal: tus reglas, tu conciliación y tu relación con el comercio.</p></li>
+      <li class="reveal" style="--d:160ms"><span class="ms" aria-hidden="true">contactless</span><h3>El cliente</h3><p>Paga como ya lo hace: acerca su tarjeta sin contacto, su celular o su reloj con una billetera digital.</p></li>
+      <li class="reveal" style="--d:240ms"><span class="ms" aria-hidden="true">lock</span><h3>Tu equipo de seguridad</h3><p>El número de tarjeta viaja cifrado desde la lectura y solo se descifra en tu HSM. Tu app nunca lo ve.</p></li>
+    </ul>
+    <p class="studio-note reveal">Caso ilustrativo · iPhone, Visa y Mastercard se mencionan como tecnologías y redes con las que se integra · cada fase termina con una aprobación humana</p>
+  </div>
+</section>
+
+<!-- ===================== LA AI FACTORY EN CUALQUIER PROYECTO ===================== -->
+<section class="section" id="demo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Para cualquier proyecto</span>
+      <h2 class="split">El mismo proceso, <span class="grad-text">otra necesidad de negocio.</span></h2>
+      <p class="reveal">Cambia el problema y cambian los subagentes, pero el método es igual: fases claras, entregables revisables y una aprobación humana al cierre de cada una.</p>
+    </div>
+    <div class="factory-wrap reveal">
       <div class="factory" id="factory" role="region" aria-label="Demostración ilustrativa: la AI Factory ejecuta cada fase con subagentes especializados">
         <div class="studio-top">
           <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -321,12 +386,12 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Servicios</h4>
+        <h4>Productos</h4>
         <ul>
-          <li><a href="../servicios/#integraciones">Integraciones enterprise</a></li>
-          <li><a href="../servicios/#modernizacion">Modernización de APIs</a></li>
-          <li><a href="../servicios/#sdks">SDKs y documentación</a></li>
-          <li><a href="../servicios/#adopcion">IA en tu organización</a></li>
+          <li><a href="../productos/#integraciones">Integraciones enterprise</a></li>
+          <li><a href="../productos/#modernizacion">Modernización de APIs</a></li>
+          <li><a href="../productos/#sdks">SDKs y APIs</a></li>
+          <li><a href="../productos/#adopcion">Plataforma de IA</a></li>
         </ul>
       </div>
       <div class="footer-col">
