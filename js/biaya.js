@@ -73,6 +73,35 @@
   window.addEventListener('scroll', onScrollNav, { passive: true });
   onScrollNav();
 
+  /* ---------- Barra del producto: resalta la sección que estás leyendo ---------- */
+  const pnavLinks = $$('.pnav-links a[href^="#"]');
+  if (pnavLinks.length) {
+    const scroller = $('.pnav-links');
+    const secs = pnavLinks.map((a) => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    let current = '';
+    const setCurrent = (id) => {
+      if (id === current) return;
+      current = id;
+      pnavLinks.forEach((a) => {
+        const on = a.getAttribute('href') === `#${id}`;
+        if (!on) { a.removeAttribute('aria-current'); return; }
+        a.setAttribute('aria-current', 'true');
+        // En pantallas angostas la barra se desliza para mostrar la sección activa
+        scroller.scrollTo({ left: a.offsetLeft - (scroller.clientWidth - a.offsetWidth) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    };
+    // La sección activa es la última cuyo inicio ya pasó la línea bajo las barras fijas
+    const onScrollPnav = () => {
+      const line = 150;
+      let id = secs[0].id;
+      secs.forEach((sec) => { if (sec.getBoundingClientRect().top - line <= 0) id = sec.id; });
+      setCurrent(id);
+    };
+    window.addEventListener('scroll', onScrollPnav, { passive: true });
+    window.addEventListener('resize', onScrollPnav);
+    onScrollPnav();
+  }
+
   /* ---------- Títulos palabra por palabra ---------- */
   $$('.split').forEach((el) => {
     let i = 0;

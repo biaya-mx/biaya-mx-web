@@ -1052,6 +1052,29 @@ a:hover > .more .ms, a:hover .more .ms { transform: translateX(4px); }
 .e2e-step.on::after { opacity: 1; }
 .e2e-step.done { color: var(--green); }
 .e2e-desc { margin: 4px 0 0; min-height: 3em; text-align: center; font-size: 16px; color: var(--text-2); }
+/* Barra propia del producto (estilo página de producto): fija bajo el menú y resalta la sección visible */
+html:has(.pnav) { scroll-padding-top: 132px; }
+.pnav { position: sticky; top: 72px; z-index: 55; margin-top: 72px; background: var(--nav-bg); -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%); border-bottom: 1px solid var(--line); }
+.pnav-inner { display: flex; align-items: center; gap: 20px; height: 48px; }
+.pnav-brand { display: inline-flex; align-items: center; gap: 8px; padding-right: 20px; border-right: 1px solid var(--line-2); color: var(--text); font: 600 14px/1 var(--f-head); white-space: nowrap; }
+.pnav-brand .ms { font-size: 20px; color: var(--green); }
+.pnav-links { position: relative; display: flex; gap: 2px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+.pnav-links::-webkit-scrollbar { display: none; }
+.pnav-links a { position: relative; padding: 14px 12px; color: var(--text-2); font-size: 13.5px; font-weight: 500; white-space: nowrap; transition: color .2s; }
+.pnav-links a:hover { color: var(--text); }
+.pnav-links a[aria-current="true"] { color: var(--text); }
+.pnav-links a[aria-current="true"]::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 0; height: 2px; border-radius: 2px; background: var(--grad); }
+.pnav + .page-hero { padding-top: clamp(56px, 8vw, 96px); }
+@media (max-width: 900px) { .pnav-inner { gap: 12px; } .pnav-brand { padding-right: 12px; } .pnav-links { margin-left: 0; } }
+@media (max-width: 600px) { .pnav-name { display: none; } .pnav-links a { padding: 14px 10px; font-size: 13px; } }
+
+/* Qué es: cuatro principios en columnas, sin tarjetas */
+.pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+.pillar h3 { margin: 18px 0 8px; font-size: 18px; letter-spacing: -.01em; }
+.pillar p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-2); }
+@media (max-width: 900px) { .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .pillars { grid-template-columns: 1fr; } }
+
 /* Lo que gana cada actor, debajo del caso */
 .e2e-value { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: clamp(28px, 4vw, 44px) 0 0; padding: 0; list-style: none; }
 .e2e-value li { padding: 20px; border-radius: var(--r); border: 1px solid var(--line); background: var(--tint); }

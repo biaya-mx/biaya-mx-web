@@ -92,7 +92,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&icon_names=account_balance,account_tree,add,alt_route,api,architecture,arrow_forward,arrow_upward,auto_awesome,bolt,bug_report,cell_tower,check,check_circle,close,cloud,cloud_done,cloud_upload,code,construction,contactless,credit_card,dark_mode,data_object,database,deployed_code,description,dns,error,expand_more,fact_check,folder,groups,hub,insights,inventory_2,light_mode,lightbulb,lock,mail,menu,menu_book,monitor_heart,monitoring,pause,person_check,play_arrow,policy,precision_manufacturing,progress_activity,public,qr_code_2,radio_button_unchecked,rocket_launch,schedule,school,science,security,shield,shopping_bag,smart_toy,smartphone,storefront,stream,supervised_user_circle,swap_horiz,sync_alt,task_alt,terminal,travel_explore,verified,verified_user&display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&icon_names=account_balance,account_tree,add,alt_route,api,architecture,arrow_downward,arrow_forward,arrow_upward,auto_awesome,bolt,bug_report,cell_tower,check,check_circle,close,cloud,cloud_done,cloud_upload,code,construction,contactless,credit_card,dark_mode,data_object,database,deployed_code,description,dns,error,expand_more,fact_check,folder,groups,hub,insights,inventory_2,light_mode,lightbulb,lock,mail,menu,menu_book,monitor_heart,monitoring,pause,person_check,play_arrow,policy,precision_manufacturing,progress_activity,public,qr_code_2,radio_button_unchecked,rocket_launch,schedule,school,science,security,shield,shopping_bag,smart_toy,smartphone,storefront,stream,supervised_user_circle,swap_horiz,sync_alt,task_alt,terminal,travel_explore,verified,verified_user&display=block" rel="stylesheet">
   <!-- Three.js para la animación 3D del caso de punta a punta (se descarga solo cerca de la sección) -->
   <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
   <link rel="stylesheet" href="../css/biaya.css">
@@ -139,13 +139,32 @@
 
 <main>
 
-<section class="page-hero">
+<!-- ===================== NAVEGACIÓN DEL PRODUCTO (fija al bajar) ===================== -->
+<nav class="pnav" aria-label="Secciones de AI Factory">
+  <div class="wrap pnav-inner">
+    <a class="pnav-brand" href="#resumen"><span class="ms" aria-hidden="true">precision_manufacturing</span><span class="pnav-name">AI Factory</span></a>
+    <div class="pnav-links">
+      <a href="#resumen">Resumen</a>
+      <a href="#de-la-idea-a-produccion">En acción</a>
+      <a href="#que-es">Qué es</a>
+      <a href="#orquestacion">Cómo funciona</a>
+      <a href="#fases">Fases</a>
+      <a href="#casos">Casos de uso</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" id="resumen">
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap">
     <span class="eyebrow reveal">AI Factory</span>
     <h1 class="split">Subagentes especializados. <span class="grad-text">Ingenieros al mando.</span></h1>
-    <p class="lead reveal" style="--d:300ms">Un orquestador divide tu proyecto en fases. En cada una trabajan subagentes de IA expertos en una sola tarea, y nada avanza sin aprobación humana. Míralo en un caso de pagos, de la idea a producción.</p>
+    <p class="lead reveal" style="--d:300ms">Un orquestador divide tu proyecto en fases. En cada una trabajan subagentes de IA expertos en una sola tarea, y nada avanza sin aprobación humana.</p>
+    <div class="cta-actions reveal" style="--d:420ms">
+      <a class="btn btn-green" href="../contacto/">Agenda una sesión <span class="ms" aria-hidden="true">arrow_forward</span></a>
+      <a class="btn btn-ghost" href="#de-la-idea-a-produccion">Mírala en acción <span class="ms" aria-hidden="true">arrow_downward</span></a>
+    </div>
   </div>
 </section>
 
@@ -153,7 +172,7 @@
 <section class="section e2e-band e2e-hero" id="de-la-idea-a-produccion">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Caso de punta a punta · Tap to Pay en iPhone</span>
+      <span class="eyebrow">En acción · Tap to Pay en iPhone</span>
       <h2 class="split">Tus comercios cobran con su iPhone. <span class="grad-text">Tu core aprueba cada venta.</span></h2>
       <p class="reveal">Un caso ilustrativo para bancos y adquirentes: habilitar Tap to Pay en iPhone dentro de tu propia app, para que cualquier comercio acepte tarjetas sin contacto y billeteras digitales sin comprar ni mantener una terminal. Mira cómo la AI Factory lo lleva de la idea a producción.</p>
     </div>
@@ -194,89 +213,19 @@
   </div>
 </section>
 
-<!-- ===================== LA AI FACTORY EN CUALQUIER PROYECTO ===================== -->
-<section class="section" id="demo">
+<!-- ===================== QUÉ ES ===================== -->
+<section class="section" id="que-es">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Para cualquier proyecto</span>
-      <h2 class="split">El mismo proceso, <span class="grad-text">otra necesidad de negocio.</span></h2>
-      <p class="reveal">Cambia el problema y cambian los subagentes, pero el método es igual: fases claras, entregables revisables y una aprobación humana al cierre de cada una.</p>
+      <span class="eyebrow">Qué es</span>
+      <h2 class="split">Una fábrica de software con IA, <span class="grad-text">dirigida por ingenieros.</span></h2>
+      <p class="reveal">La AI Factory convierte una necesidad de negocio en software listo para producción. Lo que viste en el caso de Tap to Pay se repite en cada proyecto con cuatro principios.</p>
     </div>
-    <div class="factory-wrap reveal">
-      <div class="factory" id="factory" role="region" aria-label="Demostración ilustrativa: la AI Factory ejecuta cada fase con subagentes especializados">
-        <div class="studio-top">
-          <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="studio-title">biaya · ai-factory / <b>tarjeta-garantizada</b></span>
-          <span class="studio-badge"><span class="dot" aria-hidden="true"></span><span id="fx-state">Orquestando</span></span>
-          <button class="fx-ctl" type="button" id="fx-toggle" aria-label="Pausar la demostración"><span class="ms" aria-hidden="true">pause</span></button>
-        </div>
-        <div class="fx-body" aria-hidden="true">
-          <aside class="fx-orch">
-            <div class="fx-orch-head"><span class="msg-av">B</span><div><b>Orquestador</b><small>Divide el trabajo y asigna subagentes</small></div></div>
-            <p class="fx-need"><span>Necesidad de negocio</span>“Queremos lanzar una tarjeta de crédito garantizada para clientes sin historial crediticio.”</p>
-            <ol class="fx-phases" id="fx-phases"></ol>
-          </aside>
-          <div class="fx-stage" id="fx-stage"></div>
-        </div>
-        <div class="fx-dock" id="fx-dock" aria-hidden="true"></div>
-      </div>
-      <p class="studio-note">Demostración ilustrativa · las fases y los subagentes se ajustan a cada proyecto</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FASES ===================== -->
-<section class="section" id="fases">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Las fases</span>
-      <h2 class="split">Cada fase, un equipo de subagentes.</h2>
-      <p class="reveal">Los subagentes trabajan en paralelo, cada uno con un objetivo acotado. Al cerrar la fase, una persona revisa y aprueba antes de continuar.</p>
-    </div>
-
-    <div class="phases">
-      <article class="card spot phase-card reveal" style="--d:0ms" data-gate="tu equipo" data-gate-av="TU">
-        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">lightbulb</span></span><span class="num">FASE 01</span></div>
-        <h3>Descubrimiento</h3>
-        <p>Convertimos la necesidad de negocio en objetivos, métricas y restricciones claras.</p>
-        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Leyendo la necesidad|Clientes sin historial crediticio|Objetivos y métricas definidos"><span class="ms" aria-hidden="true">insights</span>Analista de negocio</li><li data-log="Mapeando el core bancario|Procesador de tarjetas identificado|Mapa de sistemas listo"><span class="ms" aria-hidden="true">travel_explore</span>Explorador de sistemas</li><li data-log="Requisitos de identificación|Bitácora auditable requerida|Restricciones documentadas"><span class="ms" aria-hidden="true">policy</span>Revisor regulatorio</li></ul>
-        <div class="phase-foot"><span>Entregable<b>Brief con objetivos medibles</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo aprueba el alcance</span></div>
-      </article>
-      <article class="card spot phase-card reveal" style="--d:80ms" data-gate="arquitecto Biaya" data-gate-av="IB">
-        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">architecture</span></span><span class="num">FASE 02</span></div>
-        <h3>Arquitectura</h3>
-        <p>Diseñamos la solución sobre tus sistemas actuales y definimos los contratos antes de escribir código.</p>
-        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Evaluando alternativas|Servicio de originación y garantía|Diagrama de arquitectura listo"><span class="ms" aria-hidden="true">account_tree</span>Arquitecto de soluciones</li><li data-log="POST /v1/solicitudes|POST /v1/garantias|Contrato OpenAPI válido"><span class="ms" aria-hidden="true">description</span>Diseñador de contratos</li><li data-log="Cliente, garantía y línea|Reglas de integridad|Migraciones generadas"><span class="ms" aria-hidden="true">database</span>Modelador de datos</li></ul>
-        <div class="phase-foot"><span>Entregable<b>Arquitectura y contratos OpenAPI</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Un arquitecto de Biaya aprueba el diseño</span></div>
-      </article>
-      <article class="card spot phase-card reveal" style="--d:160ms" data-gate="ingeniero Biaya" data-gate-av="IB">
-        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">code</span></span><span class="num">FASE 03</span></div>
-        <h3>Construcción</h3>
-        <p>Los subagentes escriben el servicio, los adaptadores a tus sistemas y los SDKs, siguiendo el contrato aprobado.</p>
-        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="src/solicitudes.ts|src/garantias.ts|Servicio compilado"><span class="ms" aria-hidden="true">terminal</span>Desarrollador de servicios</li><li data-log="Adaptador del core bancario|Adaptador del procesador|Reintentos e idempotencia"><span class="ms" aria-hidden="true">hub</span>Integrador de sistemas</li><li data-log="SDK TypeScript|SDK Java|SDK Python"><span class="ms" aria-hidden="true">data_object</span>Generador de SDKs</li></ul>
-        <div class="phase-foot"><span>Entregable<b>Código en tu repositorio</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Un ingeniero de Biaya revisa el código</span></div>
-      </article>
-      <article class="card spot phase-card reveal" style="--d:0ms" data-gate="tu equipo" data-gate-av="TU">
-        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">science</span></span><span class="num">FASE 04</span></div>
-        <h3>Calidad</h3>
-        <p>Generamos las pruebas junto con el código y las ejecutamos en cada cambio.</p>
-        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Casos válidos y de error|Límites de crédito y garantía|Todas en verde"><span class="ms" aria-hidden="true">task_alt</span>Pruebas unitarias</li><li data-log="Core bancario simulado|Procesador simulado|Flujo completo aprobado"><span class="ms" aria-hidden="true">sync_alt</span>Pruebas de integración</li><li data-log="Tráfico concurrente simulado|Latencia dentro del objetivo|Reporte generado"><span class="ms" aria-hidden="true">monitoring</span>Pruebas de carga</li></ul>
-        <div class="phase-foot"><span>Entregable<b>Pruebas automatizadas en verde</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo valida los resultados</span></div>
-      </article>
-      <article class="card spot phase-card reveal" style="--d:80ms" data-gate="seguridad Biaya" data-gate-av="IB">
-        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">shield</span></span><span class="num">FASE 05</span></div>
-        <h3>Seguridad</h3>
-        <p>Revisamos el código, las dependencias y el cumplimiento antes de que nada llegue a tus ambientes.</p>
-        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Escaneando el código|Sin hallazgos críticos|Reporte listo"><span class="ms" aria-hidden="true">bug_report</span>Análisis estático</li><li data-log="Revisando librerías|Licencias verificadas|Sin vulnerabilidades conocidas"><span class="ms" aria-hidden="true">inventory_2</span>Auditor de dependencias</li><li data-log="Datos sensibles cifrados|Bitácora de cada operación|Evidencia para auditoría"><span class="ms" aria-hidden="true">verified_user</span>Revisor de cumplimiento</li></ul>
-        <div class="phase-foot"><span>Entregable<b>Reporte de seguridad y evidencias</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Seguridad de Biaya aprueba</span></div>
-      </article>
-      <article class="card spot phase-card reveal" style="--d:160ms" data-gate="tu equipo" data-gate-av="TU">
-        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">rocket_launch</span></span><span class="num">FASE 06</span></div>
-        <h3>Despliegue</h3>
-        <p>Desplegamos en tu infraestructura, con tu CI/CD, y dejamos todo listo para operar.</p>
-        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Build de la imagen|Pipeline en verde|Desplegado en pruebas"><span class="ms" aria-hidden="true">deployed_code</span>Ingeniero de CI/CD</li><li data-log="Métricas y alertas|Tableros de operación|Monitoreo activo"><span class="ms" aria-hidden="true">monitor_heart</span>Observabilidad</li><li data-log="Portal de la API|Runbooks de operación|Documentación publicada"><span class="ms" aria-hidden="true">menu_book</span>Redactor técnico</li></ul>
-        <div class="phase-foot"><span>Entregable<b>Servicio en tu ambiente de pruebas</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo libera el despliegue</span></div>
-      </article>
+    <div class="pillars">
+      <article class="pillar reveal"><span class="ic-box"><span class="ms" aria-hidden="true">account_tree</span></span><h3>Orquesta</h3><p>Un orquestador entiende tu necesidad, la divide en fases y asigna cada tarea al subagente adecuado.</p></article>
+      <article class="pillar reveal" style="--d:80ms"><span class="ic-box"><span class="ms" aria-hidden="true">smart_toy</span></span><h3>Especializa</h3><p>Cada subagente hace una sola cosa bien: diseñar un contrato, escribir pruebas o revisar dependencias.</p></article>
+      <article class="pillar reveal" style="--d:160ms"><span class="ic-box"><span class="ms" aria-hidden="true">person_check</span></span><h3>Supervisa</h3><p>Nada avanza sin aprobación humana: nuestros ingenieros y tu equipo revisan cada fase.</p></article>
+      <article class="pillar reveal" style="--d:240ms"><span class="ic-box"><span class="ms" aria-hidden="true">deployed_code</span></span><h3>Entrega</h3><p>Código, pruebas y documentación en tu repositorio, desplegados en tu infraestructura.</p></article>
     </div>
   </div>
 </section>
@@ -285,8 +234,9 @@
 <section class="section" id="orquestacion">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Orquestación</span>
+      <span class="eyebrow">Cómo funciona</span>
       <h2 class="split">La IA acelera. <span class="grad-text">Las personas deciden.</span></h2>
+      <p class="reveal">Detrás de cada fase hay un orquestador que reparte el trabajo, subagentes especializados y personas que aprueban. Todo queda registrado.</p>
     </div>
 
     <div class="duo">
@@ -348,6 +298,93 @@
           <span class="m" style="left:50%;top:84%">tu modelo</span>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FASES ===================== -->
+<section class="section" id="fases">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Fases</span>
+      <h2 class="split">Cada fase, un equipo de subagentes.</h2>
+      <p class="reveal">Los subagentes trabajan en paralelo, cada uno con un objetivo acotado. Al cerrar la fase, una persona revisa y aprueba antes de continuar.</p>
+    </div>
+
+    <div class="phases">
+      <article class="card spot phase-card reveal" style="--d:0ms" data-gate="tu equipo" data-gate-av="TU">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">lightbulb</span></span><span class="num">FASE 01</span></div>
+        <h3>Descubrimiento</h3>
+        <p>Convertimos la necesidad de negocio en objetivos, métricas y restricciones claras.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Leyendo la necesidad|Clientes sin historial crediticio|Objetivos y métricas definidos"><span class="ms" aria-hidden="true">insights</span>Analista de negocio</li><li data-log="Mapeando el core bancario|Procesador de tarjetas identificado|Mapa de sistemas listo"><span class="ms" aria-hidden="true">travel_explore</span>Explorador de sistemas</li><li data-log="Requisitos de identificación|Bitácora auditable requerida|Restricciones documentadas"><span class="ms" aria-hidden="true">policy</span>Revisor regulatorio</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Brief con objetivos medibles</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo aprueba el alcance</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:80ms" data-gate="arquitecto Biaya" data-gate-av="IB">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">architecture</span></span><span class="num">FASE 02</span></div>
+        <h3>Arquitectura</h3>
+        <p>Diseñamos la solución sobre tus sistemas actuales y definimos los contratos antes de escribir código.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Evaluando alternativas|Servicio de originación y garantía|Diagrama de arquitectura listo"><span class="ms" aria-hidden="true">account_tree</span>Arquitecto de soluciones</li><li data-log="POST /v1/solicitudes|POST /v1/garantias|Contrato OpenAPI válido"><span class="ms" aria-hidden="true">description</span>Diseñador de contratos</li><li data-log="Cliente, garantía y línea|Reglas de integridad|Migraciones generadas"><span class="ms" aria-hidden="true">database</span>Modelador de datos</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Arquitectura y contratos OpenAPI</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Un arquitecto de Biaya aprueba el diseño</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:160ms" data-gate="ingeniero Biaya" data-gate-av="IB">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">code</span></span><span class="num">FASE 03</span></div>
+        <h3>Construcción</h3>
+        <p>Los subagentes escriben el servicio, los adaptadores a tus sistemas y los SDKs, siguiendo el contrato aprobado.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="src/solicitudes.ts|src/garantias.ts|Servicio compilado"><span class="ms" aria-hidden="true">terminal</span>Desarrollador de servicios</li><li data-log="Adaptador del core bancario|Adaptador del procesador|Reintentos e idempotencia"><span class="ms" aria-hidden="true">hub</span>Integrador de sistemas</li><li data-log="SDK TypeScript|SDK Java|SDK Python"><span class="ms" aria-hidden="true">data_object</span>Generador de SDKs</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Código en tu repositorio</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Un ingeniero de Biaya revisa el código</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:0ms" data-gate="tu equipo" data-gate-av="TU">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">science</span></span><span class="num">FASE 04</span></div>
+        <h3>Calidad</h3>
+        <p>Generamos las pruebas junto con el código y las ejecutamos en cada cambio.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Casos válidos y de error|Límites de crédito y garantía|Todas en verde"><span class="ms" aria-hidden="true">task_alt</span>Pruebas unitarias</li><li data-log="Core bancario simulado|Procesador simulado|Flujo completo aprobado"><span class="ms" aria-hidden="true">sync_alt</span>Pruebas de integración</li><li data-log="Tráfico concurrente simulado|Latencia dentro del objetivo|Reporte generado"><span class="ms" aria-hidden="true">monitoring</span>Pruebas de carga</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Pruebas automatizadas en verde</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo valida los resultados</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:80ms" data-gate="seguridad Biaya" data-gate-av="IB">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">shield</span></span><span class="num">FASE 05</span></div>
+        <h3>Seguridad</h3>
+        <p>Revisamos el código, las dependencias y el cumplimiento antes de que nada llegue a tus ambientes.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Escaneando el código|Sin hallazgos críticos|Reporte listo"><span class="ms" aria-hidden="true">bug_report</span>Análisis estático</li><li data-log="Revisando librerías|Licencias verificadas|Sin vulnerabilidades conocidas"><span class="ms" aria-hidden="true">inventory_2</span>Auditor de dependencias</li><li data-log="Datos sensibles cifrados|Bitácora de cada operación|Evidencia para auditoría"><span class="ms" aria-hidden="true">verified_user</span>Revisor de cumplimiento</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Reporte de seguridad y evidencias</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Seguridad de Biaya aprueba</span></div>
+      </article>
+      <article class="card spot phase-card reveal" style="--d:160ms" data-gate="tu equipo" data-gate-av="TU">
+        <div class="phase-top"><span class="ic-box phase-ic"><span class="ms" aria-hidden="true">rocket_launch</span></span><span class="num">FASE 06</span></div>
+        <h3>Despliegue</h3>
+        <p>Desplegamos en tu infraestructura, con tu CI/CD, y dejamos todo listo para operar.</p>
+        <ul class="agents-list" aria-label="Subagentes de la fase"><li data-log="Build de la imagen|Pipeline en verde|Desplegado en pruebas"><span class="ms" aria-hidden="true">deployed_code</span>Ingeniero de CI/CD</li><li data-log="Métricas y alertas|Tableros de operación|Monitoreo activo"><span class="ms" aria-hidden="true">monitor_heart</span>Observabilidad</li><li data-log="Portal de la API|Runbooks de operación|Documentación publicada"><span class="ms" aria-hidden="true">menu_book</span>Redactor técnico</li></ul>
+        <div class="phase-foot"><span>Entregable<b>Servicio en tu ambiente de pruebas</b></span><span class="gate"><span class="ms" aria-hidden="true">person_check</span>Tu equipo libera el despliegue</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CASOS DE USO ===================== -->
+<section class="section" id="casos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Casos de uso</span>
+      <h2 class="split">El mismo proceso, <span class="grad-text">otra necesidad de negocio.</span></h2>
+      <p class="reveal">Cambia el problema y cambian los subagentes, pero el método es igual: fases claras, entregables revisables y una aprobación humana al cierre de cada una.</p>
+    </div>
+    <div class="factory-wrap reveal">
+      <div class="factory" id="factory" role="region" aria-label="Demostración ilustrativa: la AI Factory ejecuta cada fase con subagentes especializados">
+        <div class="studio-top">
+          <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="studio-title">biaya · ai-factory / <b>tarjeta-garantizada</b></span>
+          <span class="studio-badge"><span class="dot" aria-hidden="true"></span><span id="fx-state">Orquestando</span></span>
+          <button class="fx-ctl" type="button" id="fx-toggle" aria-label="Pausar la demostración"><span class="ms" aria-hidden="true">pause</span></button>
+        </div>
+        <div class="fx-body" aria-hidden="true">
+          <aside class="fx-orch">
+            <div class="fx-orch-head"><span class="msg-av">B</span><div><b>Orquestador</b><small>Divide el trabajo y asigna subagentes</small></div></div>
+            <p class="fx-need"><span>Necesidad de negocio</span>“Queremos lanzar una tarjeta de crédito garantizada para clientes sin historial crediticio.”</p>
+            <ol class="fx-phases" id="fx-phases"></ol>
+          </aside>
+          <div class="fx-stage" id="fx-stage"></div>
+        </div>
+        <div class="fx-dock" id="fx-dock" aria-hidden="true"></div>
+      </div>
+      <p class="studio-note">Demostración ilustrativa · las fases y los subagentes se ajustan a cada proyecto</p>
     </div>
   </div>
 </section>
